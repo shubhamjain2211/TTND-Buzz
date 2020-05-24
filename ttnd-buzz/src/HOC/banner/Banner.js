@@ -1,10 +1,16 @@
 import React from 'react';
-import './Buzz.css';
+import './Banner.css';
+import Aux from '../Aux';
+import road from '../../resources/images/road.jpg';
 
-function App() {
+function Banner() {
   return (
-    <h1>TTND-BUZZ</h1>
+    <Aux> 
+      <img className="banner" src={road} alt="banner"/>
+      <h1>POSTING YOUR THOUGHTS</h1>
+      <h1>NEVER BEEN SO EASY...</h1>
+    </Aux>
   );
 }
 
-export default App;
+export default Banner;

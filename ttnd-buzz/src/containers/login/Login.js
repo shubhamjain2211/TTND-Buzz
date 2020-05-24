@@ -15,7 +15,7 @@ function Login() {
             <img className="google" src={google} alt="sign in logo" />
         </div>
     </main>
-  );
+  );  
 }
 
 export default Login;
