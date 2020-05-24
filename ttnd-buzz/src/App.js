@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
+import Login from './containers/login/Login';
 
 function App() {
   return (
-    <h1>TTND-BUZZ</h1>
+    <Login/>
   );
 }
 
