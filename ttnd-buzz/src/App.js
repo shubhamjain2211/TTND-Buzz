@@ -2,12 +2,13 @@ import React from 'react';
 import './App.css';
 import Aux from './HOC/Aux';
 import Login from './containers/login/Login';
-import Banner from './HOC/banner/Banner';
+import Dashboard from './containers/dashboard/Dashboard';
 
 function App() {
   return (
     <Aux>
     <Login/>
+    {/* <Dashboard/> */}
     </Aux>
   );
 }

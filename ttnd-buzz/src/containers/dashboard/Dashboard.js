@@ -1,10 +1,16 @@
 import React from 'react';
-import './Buzz.css';
+import './Dashboard.css';
+import Aux from '../../HOC/Aux';
+import Logout from '../../components/logout/Logout';
+import Banner from '../../components/banner/Banner';
 
-function App() {
+function Dashboard() {
   return (
-    <h1>TTND-BUZZ</h1>
+    <Aux>
+      <Logout/>
+      <Banner/>
+    </Aux>
   );
 }
 
-export default App;
+export default Dashboard;

@@ -1,0 +1,31 @@
+.logout{
+    background-color: rgb(230, 236, 245);
+    height: 8vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 4rem;
+}
+
+.logo{
+    height: 200%;
+    z-index: 2;
+    filter:drop-shadow(2px 2px 4px black);
+}
+.logo:hover{
+    height: 197%;
+    cursor: pointer;
+    filter:drop-shadow(2px 2px 4px white);
+}
+.logoutlogo{
+    height: 2vh;
+}
+h4{
+    color: rgb(243, 132, 92);
+    margin: 1rem;
+}
+h4:hover{
+    font-size: 1.03rem;
+    color: rgb(243, 107, 57);
+    cursor: pointer;
+}

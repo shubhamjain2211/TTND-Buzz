@@ -1,14 +1,14 @@
 import React from 'react';
 import './Banner.css';
-import Aux from '../Aux';
+import Aux from '../../HOC/Aux';
 import road from '../../resources/images/road.jpg';
 
 function Banner() {
   return (
     <Aux> 
       <img className="banner" src={road} alt="banner"/>
-      <h1>POSTING YOUR THOUGHTS</h1>
-      <h1>NEVER BEEN SO EASY...</h1>
+      <h1 className="line1" >POSTING YOUR THOUGHTS</h1>
+      <h1 className="line2">NEVER BEEN SO EASY...</h1>
     </Aux>
   );
 }

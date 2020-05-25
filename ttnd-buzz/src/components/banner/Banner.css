@@ -1,0 +1,22 @@
+.banner{
+    max-width: 100%;
+    position: absolute;
+}
+h1{
+    color: #fff;
+    position: relative;
+    top:10;
+    font-size: 3rem;
+    margin: 0;
+    font-weight: 500;
+}
+.line1{
+    padding: 6rem 0 0 2rem;
+}
+
+.line2{
+    padding: 0 0 0 2rem;
+}
+h1:hover{
+    filter:drop-shadow(1px 1px 3px white);
+}
