@@ -23,9 +23,11 @@
 h4{
     color: rgb(243, 132, 92);
     margin: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
 }
 h4:hover{
-    font-size: 1.03rem;
+    font-weight: 800;
     color: rgb(243, 107, 57);
     cursor: pointer;
 }

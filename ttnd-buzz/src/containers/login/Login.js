@@ -9,8 +9,8 @@ function Login() {
       <div className="background"></div>
         <div className="login-div">
             <img src={logo} alt="ttn logo" />
-            <div class="tooltip">Create Your Own Buzz
-              <span class="tooltiptext">The purpose of this app is to make the process of circulating events and concerns in a structured way.</span>
+            <div className="logintext">Create Your Own Buzz
+              <span className="logintexttooltip">The purpose of this app is to make the process of circulating events and concerns in a structured way.</span>
             </div>
             <img className="google" src={google} alt="sign in logo" />
         </div>

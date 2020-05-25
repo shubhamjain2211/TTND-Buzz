@@ -23,11 +23,6 @@
     filter:drop-shadow(8px 8px 10px grey);
 }
 
-.login-div h4{
-    color: rgb(117, 117, 117);
-    font-weight: 500;
-}
-
 .google{
     width: 60%;
 }
@@ -36,7 +31,7 @@
     cursor: pointer;
 }
 
-.tooltip {
+.logintext {
     position: relative;
     display: block;
     color: #838282;
@@ -44,7 +39,7 @@
     padding: 1.2rem;
   }
   
-  .tooltip .tooltiptext {
+  .logintext .logintexttooltip {
     visibility: hidden;
     width: 100%;
     background-color: #d4d1d169;
@@ -56,6 +51,6 @@
     z-index: 1;
   }
   
-  .tooltip:hover .tooltiptext {
+  .logintext:hover .logintexttooltip {
     visibility: visible;
   } 

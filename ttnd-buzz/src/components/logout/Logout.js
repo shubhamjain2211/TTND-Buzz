@@ -9,7 +9,7 @@ function Logout() {
       <div className="logout">
         <img className="logo" src={Logo} alt="TTN Logo"/>
         <div>
-          <h4>Logout</h4>
+          <h4>Logout <i className="fas fa-sign-out-alt"></i></h4>
         </div>
       </div>
     </Aux>  
