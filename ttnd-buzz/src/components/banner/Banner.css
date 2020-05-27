@@ -1,5 +1,5 @@
 .banner{
-    max-width: 100%;
+    width: 100%;
     position: absolute;
 }
 h1{
@@ -15,7 +15,7 @@ h1{
 }
 
 .line2{
-    padding: 0 0 0 2rem;
+    padding: 0 0 6rem 2rem;
 }
 h1:hover{
     filter:drop-shadow(1px 1px 3px white);

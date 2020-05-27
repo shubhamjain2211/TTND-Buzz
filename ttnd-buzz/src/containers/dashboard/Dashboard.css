@@ -1,0 +1,16 @@
+.Dashboard{
+    padding: 1rem 0;
+    max-width: 95%;
+    margin: auto;
+    display: flex;
+}
+
+.DashboardMenu{
+    width: 25%;
+    margin: 0 1rem;
+}
+
+.DashboardArea{
+    width: 75%;
+    margin: 0 1rem;
+}
