@@ -4,6 +4,8 @@ import Aux from '../../HOC/Aux';
 import Logout from '../../components/logout/Logout';
 import Banner from '../../components/banner/Banner';
 import Menu from '../../components/menu/Menu';
+import Complaintbox from '../../components/complaintbox/Complaintbox';
+import CreateBuzz from '../../components/createbuzz/Createbuzz';
 
 function Dashboard() {
   return (
@@ -15,7 +17,8 @@ function Dashboard() {
           <Menu/>
         </div>
         <div className="DashboardArea">
-          <h2>Your Complaints</h2>
+          <CreateBuzz/>
+          <Complaintbox/>
         </div>
       </div>
     </Aux>
