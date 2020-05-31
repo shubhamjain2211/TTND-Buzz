@@ -7,8 +7,8 @@ import Dashboard from './containers/dashboard/Dashboard';
 function App() {
   return (
     <Aux>
-    {/* <Login/> */}
-    <Dashboard/>
+    <Login/>
+    {/* <Dashboard/> */}
     </Aux>
   );
 }
