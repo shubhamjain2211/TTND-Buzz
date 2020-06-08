@@ -12,7 +12,8 @@ function Login() {
             <div className="logintext">Create Your Own Buzz
               <span className="logintexttooltip">The purpose of this app is to make the process of circulating events and concerns in a structured way.</span>
             </div>
-            <img className="google" src={google} alt="sign in logo" />
+            <a href="http://localhost:5000">Login With Google</a><br></br>
+            <img href="http://localhost:5000" className="google" src={google} alt="sign in logo" />
         </div>
     </main>
   );  
