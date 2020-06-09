@@ -1,3 +1,4 @@
 {
-    "mongoURI":"mongodb+srv://shubham123:shubham123@cluster0-0itxy.mongodb.net/<dbname>?retryWrites=true&w=majority"
+    "mongoURI":"mongodb+srv://shubham123:shubham123@cluster0-0itxy.mongodb.net/<dbname>?retryWrites=true&w=majority",
+    "jwtSecret":"mySecretToken"
 }
