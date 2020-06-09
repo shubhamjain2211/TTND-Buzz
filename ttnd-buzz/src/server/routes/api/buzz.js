@@ -93,4 +93,52 @@ router.delete('/:id', auth, async (req, res) =>{
     }
 });
 
+//@route   Put api/buzz/like:id
+//@desc    Like a Buzz
+//@access  Private
+router.put('/like/:id', auth, async (req,res) => {
+    try {
+        const buzz = await Buzz.findById(req.params.id);
+
+        //Check if the Buzz has been already liked or disliked
+        if(buzz.likes.filter(like => like.user.toString() === req.user.id).length>0 || 
+        buzz.dislikes.filter(dislike => dislike.user.toString() === req.user.id).length>0){
+            return res.status(400).json({ msg: 'Already Reacted on Buzz' });
+        }
+
+        buzz.likes.unshift({ user: req.user.id });
+
+        await buzz.save();
+
+        res.json(buzz.likes);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server Error');
+    }
+});
+
+//@route   Put api/buzz/dislike:id
+//@desc    Dislike a Buzz
+//@access  Private
+router.put('/dislike/:id', auth, async (req,res) => {
+    try {
+        const buzz = await Buzz.findById(req.params.id);
+
+        //Check if the Buzz has been already liked or disliked
+        if(buzz.likes.filter(like => like.user.toString() === req.user.id).length>0 || 
+        buzz.dislikes.filter(dislike => dislike.user.toString() === req.user.id).length>0){
+            return res.status(400).json({ msg: 'Already Reacted on Buzz' });
+        }
+
+        buzz.dislikes.unshift({ user: req.user.id });
+
+        await buzz.save();
+
+        res.json(buzz.dislikes);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server Error');
+    }
+});
+
 module.exports = router;
