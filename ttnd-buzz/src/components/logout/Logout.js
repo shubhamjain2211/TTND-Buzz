@@ -1,19 +1,32 @@
-import React from 'react';
+import React,{Fragment} from 'react';
 import './Logout.css';
-import Aux from '../../HOC/Aux';
 import Logo from '../../resources/logo/ttn.png';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { logout } from '../../actions/auth';
 
-function Logout() {
+const Logout = ({ auth: {isAuthenticated, loading}, logout }) => {
+
   return (
-    <Aux> 
+    <Fragment> 
       <div className="logout">
         <img className="logo" src={Logo} alt="TTN Logo"/>
         <div>
-          <h4>Logout <i className="fas fa-sign-out-alt"></i></h4>
+          <a onClick={logout} href='#!'>Logout <i className="fas fa-sign-out-alt"></i></a>
         </div>
       </div>
-    </Aux>  
+    </Fragment>  
   );
 }
 
-export default Logout;
+Logout.propTypes = {
+  logout: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired
+}
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+export default connect(mapStateToProps, { logout })(Logout);
