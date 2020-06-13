@@ -1,0 +1,19 @@
+select{
+    padding: 0.8rem;
+    margin: 1rem;
+    background-color: #ffffff;
+    border: 1px solid #dfdfdf;
+    border-radius: 0.2rem;
+}
+.CreateProfileButton{
+    padding: 0.8rem;
+    color: rgb(236, 83, 27);
+    background-color: #dfdfdf;
+    border: 1px solid #cfc8c8;
+    border-radius: 0.2rem;
+}
+.CreateProfileButton:hover{
+    cursor: pointer;
+    filter: drop-shadow(2px 2px 2px #cfc8c8);
+    font-weight: 500;
+}

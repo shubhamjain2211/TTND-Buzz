@@ -6,6 +6,9 @@ import LoginForm from './containers/login/forms/Loginform';
 import RegisterForm from './containers/login/forms/Registerform';
 import Alert from './components/layouts/Alert';
 import Dashboard from './containers/dashboard/Dashboard';
+import Buzz from './components/buzz/Buzz';
+import Complaints from './components/complaints/Complaints';
+import Resolved from './components/resolved/Resolved';
 
 //Redux
 import { Provider } from 'react-redux';
@@ -28,6 +31,9 @@ const App = () => {
       <Fragment>
         <Route exact path='/' component={Login} />
         <Route exact path='/dashboard' component={Dashboard} />
+        <Route exact path='/dashboard/buzz' component={Buzz} />
+        <Route exact path='/dashboard/complaint' component={Complaints} />
+        <Route exact path='/dashboard/resolve' component={Resolved} />
         <Alert />
         <Switch>
           <Route exact path='/loginform' component={LoginForm} />

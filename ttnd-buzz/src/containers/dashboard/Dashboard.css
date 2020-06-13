@@ -14,3 +14,38 @@
     width: 75%;
     margin: 0 1rem;
 }
+.Welcome{
+    font-weight: 800;
+    color: rgba(22, 22, 22, 0.651);
+    text-align: center;
+    margin: 0;
+}
+.Email{
+    font-weight: 300;
+    color: rgba(22, 22, 22, 0.651);
+    text-align: center;
+    margin: 0;
+}
+.DashboardProfile{
+    width: 80%;
+    margin: 1rem auto;
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid #dfdfdf;  
+    background-color: #ffffff;
+    color: rgb(70, 69, 69);
+    filter: drop-shadow(2px 2px 2px #cfc8c8);
+    border-radius: 0.2rem;
+}
+.CreateProfile{
+    padding: 0.8rem;
+    color: rgb(236, 83, 27);
+    background-color: #dfdfdf;
+    border: 1px solid #cfc8c8;
+    border-radius: 0.2rem;
+}
+.CreateProfile button:hover{
+    cursor: pointer;
+    filter: drop-shadow(2px 2px 2px #cfc8c8);
+    font-weight: 500;
+}

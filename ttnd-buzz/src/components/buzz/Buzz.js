@@ -1,10 +1,30 @@
-import React from 'react';
+import React,{Fragment, useEffect} from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import Spinner from '../layouts/Spinner';
+import { getBuzz } from '../../actions/buzz';
 import './Buzz.css';
 
-function App() {
+const Buzz = ({ getBuzz, buzz: {buzz, loading} }) => {
+
+  useEffect(() => {
+    getBuzz();
+  }, [getBuzz]);
+
   return (
-    <h1>TTND-BUZZ</h1>
+    <Fragment>
+      Buzz
+    </Fragment>
   );
 }
 
-export default App;
+Buzz.propTypes = {
+  getBuzz: PropTypes.func.isRequired,
+  buzz: PropTypes.object.isRequired
+}
+
+const mapStateToProps = state =>({
+  buzz: state.buzz
+});
+
+export default connect( mapStateToProps, { getBuzz } )(Buzz);

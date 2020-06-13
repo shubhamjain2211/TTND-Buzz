@@ -1,10 +1,16 @@
 import React from 'react';
 import './Login.css';
 import logo from '../../resources/logo/ttn.png';
-import { Link } from 'react-router-dom';
+import { Link,Redirect } from 'react-router-dom';
 import google from '../../resources/logo/google.png';
+import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
 
-function Login() {
+function Login({ isAuthenticated }) {
+
+if(isAuthenticated){
+  return <Redirect to='/dashboard'/>
+}
   return (
     <main>
       <div className="background"></div>
@@ -21,4 +27,12 @@ function Login() {
   );  
 }
 
-export default Login;
+Login.propTypes = {
+  isAuthenticated: PropTypes.bool
+};
+
+const mapStateToProps = state =>({
+  isAuthenticated: state.auth.isAuthenticated
+});
+
+export default connect(mapStateToProps)(Login);

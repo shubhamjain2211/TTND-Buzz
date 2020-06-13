@@ -1,5 +1,5 @@
 import React from 'react';
-import './Buzz.css';
+import './Resolved.css';
 
 function App() {
   return (

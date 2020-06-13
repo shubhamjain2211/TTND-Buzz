@@ -7,15 +7,14 @@ const ProfileSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'user'
   },
-  handle: {
-    type: String,
-    required: true,
-    max: 40
-  },
   company: {
     type: String,
   },
   status: {
+    type: String,
+    required: true,
+  },
+  department: {
     type: String,
     required: true,
   },

@@ -30,7 +30,8 @@ router.get('/me', auth, async (req,res) => {
 //@desc   Create or Update user profile
 //@access Private
 router.post('/', [auth,[
-    check('status', 'Status is required').not().isEmpty()]
+    check('status', 'Status is required').not().isEmpty(),
+    check('department', 'Department is required').not().isEmpty()]
     ],
     async (req,res) => {
         const errors = validationResult(req);
@@ -40,7 +41,8 @@ router.post('/', [auth,[
         
     const {
         company,
-        status
+        status,
+        department
     }=req.body;
 
     //Build Profile Object
@@ -48,9 +50,11 @@ router.post('/', [auth,[
     profleFields.user=req.user.id;
     if(company) profleFields.company = company;
     if(status) profleFields.status = status;
+    if(department) profleFields.department = department;
 
-    console.log(company);
-    console.log(status);
+    // console.log(company);
+    // console.log(status);
+    // console.log(department);
 
     try{
         let profile = await Profile.findOne({ user:req.user.id });
