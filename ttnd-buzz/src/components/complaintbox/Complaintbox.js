@@ -1,12 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Complaintbox.css';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { addComplaint } from '../../actions/complaint'; 
 
-function Complaintbox() {
+const ComplaintBox = ({ addComplaint }) => {
+  const [formData, setFormData] = useState({
+    email:'', text:'', department:'', issueTitle:'', issueId:'', lockedBy:'', assignedTo:'', status:'',name:''
+  });
+
+  const { text, department, issueTitle, issueId, lockedBy, assignedTo, status,name,email } = formData; 
+
+  const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value});
+
+  const onSubmit = async e =>{
+    e.preventDefault();
+    addComplaint(text, department, issueTitle, issueId, lockedBy, assignedTo, name, status,email);
+  }
+
   return (
     <div className="Complaintbox">
       <div className="width100 heading">Complaint Box</div>
+      <form onSubmit={e => onSubmit(e)}>
           <div className="width50"><label>Select Department</label>
-            <select>
+            <select value={department} name='department' onChange={e =>onChange(e)}>
               <option></option>
               <option>Admin</option>
               <option>Infra</option>
@@ -15,7 +32,7 @@ function Complaintbox() {
             </select>
           </div>
           <div className="width50"><label>Issue Title</label>
-            <select>
+            <select value={issueTitle} name='issueTitle' onChange={e =>onChange(e)}>
               <option></option>
               <option>Hardware</option>
               <option>Infrastructure</option>
@@ -23,21 +40,25 @@ function Complaintbox() {
             </select>
           </div><br/>
           <div className="width50"><label>Your Name</label>
-            <input type="text"/>
+            <input type="text" value={name} name='name' onChange={e =>onChange(e)} />
           </div>
           <div className="width50"><label>Email Id</label>
-            <input type="email"/>
+            <input type="email"  value={email} name='email' onChange={e =>onChange(e)}/>
           </div>
           <div className="width100"><label>Your Concern</label>
-            <textarea></textarea>
+            <textarea value={text} name='text' onChange={e =>onChange(e)}></textarea>
           </div>
           <div className="width75"></div>
           <div className="width25">
             <input className="attachment" type="image" value="Attachment"/>
             <button>Submit</button>
           </div>
+        </form>
     </div>
   );
 }
+ComplaintBox.propTypes = {
+  addComplaint: PropTypes.func.isRequired
+}
 
-export default Complaintbox;
+export default connect(null, { addComplaint })( ComplaintBox );

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Moment from 'react-moment';
-import './Complaints.css';
+import './Resolved';
 
 const SingleComplaint = ( {auth, complaint: { _id, user, text, name, 
     department, issueTitle, issueId, lockedBy, assignedTo, status, date }}) =>{
@@ -15,6 +15,7 @@ const SingleComplaint = ( {auth, complaint: { _id, user, text, name,
                     <td>Department</td>
                     <td>Issue Id</td>
                     <td>Assigned To</td>
+                    <td>Locked By</td>
                     <td>Status</td>
                 </tr>
                 <tr>
@@ -23,6 +24,9 @@ const SingleComplaint = ( {auth, complaint: { _id, user, text, name,
                     </td>
                     <td>
                         {issueId}
+                    </td>
+                    <td>
+                        {lockedBy}
                     </td>
                     <td>
                         {assignedTo}

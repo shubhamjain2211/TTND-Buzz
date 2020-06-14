@@ -1,10 +1,38 @@
-import React from 'react';
+import React,{Fragment,useEffect} from 'react';
 import './Resolved.css';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import Spinner from '../layouts/Spinner';
+import { getComplaints } from '../../actions/complaint';
+import {Redirect} from 'react-router-dom';
+import SingleResolved from './SingleResolved';
 
-function App() {
+const Complaints = ({ getComplaints, complaint: {complaints, loading} }) => {
+  
+  useEffect(() => {
+    getComplaints();
+  }, [getComplaints]);
+
   return (
-    <h1>TTND-BUZZ</h1>
+    loading? <Spinner/> :
+    <Fragment>
+      <div className='YourComplaints'>Your Complaints</div>
+      <div>
+        {complaints.map(complaint =>(
+          <SingleResolved key={complaint._id} complaint={complaint} />
+        ))}
+      </div>
+    </Fragment>
   );
 }
 
-export default App;
+Complaints.propTypes = {
+  getComplaints: PropTypes.func.isRequired,
+  complaint: PropTypes.object.isRequired
+}
+
+const mapStateToProps = state =>({
+  complaint: state.complaint,
+});
+
+export default connect( mapStateToProps, { getComplaints } )(Complaints);

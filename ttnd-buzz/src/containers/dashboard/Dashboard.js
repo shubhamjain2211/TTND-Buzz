@@ -14,10 +14,11 @@ import Spinner from '../../components/layouts/Spinner';
 import CreateProfile from '../../components/create-profile/create-profile';
 import Buzz from '../../components/buzz/Buzz';
 import Complaints from '../../components/complaints/Complaints';
+import Resolved from '../../components/resolved/Resolved';
 
 const Dashboard = ({ getCurrentProfile, auth, profile:{profile,loading} })   => {
 
-  useEffect(() => {
+  useEffect(() => { 
     getCurrentProfile();
   },[]);
 
@@ -39,10 +40,9 @@ const Dashboard = ({ getCurrentProfile, auth, profile:{profile,loading} })   => 
             {profile.status=='Admin'?<MenuAdmin/>:<Menu/>}
           </div>
           <div className="DashboardArea">
-            <CreateBuzz/>
             <Buzz/>
-            <Complaintbox/>
             <Complaints/>
+            {profile.status=='Admin'?<Resolved/>:null}
           </div>
         </div>
       </Fragment> : 

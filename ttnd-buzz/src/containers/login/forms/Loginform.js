@@ -4,6 +4,7 @@ import {Link,Redirect} from 'react-router-dom';
 import { login } from '../../../actions/auth';
 import PropTypes from 'prop-types';
 import axios from 'axios';
+import '../Login.css';
 
 const LoginForm = ({ login,isAuthenticated }) => {
   const [formData , setFormData] = useState({
@@ -27,6 +28,7 @@ const LoginForm = ({ login,isAuthenticated }) => {
 
   return (
     <Fragment>
+      <div className='LoginForm'>
       <h1 className="large text-primary">Sign IN</h1>
       <p className="lead"><i className="fas fa-user"></i> Login</p>
       <form className="form" onSubmit={e => onSubmit(e)}>
@@ -46,6 +48,7 @@ const LoginForm = ({ login,isAuthenticated }) => {
         </div>
         <input type="submit" className="btn btn-primary" value="Login" />
       </form>
+      </div>
     </Fragment>
   );  
 }

@@ -7,6 +7,7 @@ import './Buzz.css';
 import './SingleBuzz';
 import {Redirect} from 'react-router-dom';
 import SingleBuzz from './SingleBuzz';
+import CreateBuzz from '../createbuzz/Createbuzz';
 
 const Buzz = ({ getBuzz, buzz: {buzzs, loading} }) => {
 
@@ -17,6 +18,7 @@ const Buzz = ({ getBuzz, buzz: {buzzs, loading} }) => {
   return (
     loading? <Spinner/> :
     <Fragment>
+      <CreateBuzz />
       <div className='RecentBuzz'>@ Recent Buzz</div>
       <div>
         {buzzs.map(buzz =>(

@@ -19,7 +19,7 @@ router.post('/', [
         .isEmpty(),
         check('category', 'Category is required')
         .not()
-        .isEmpty()
+        .isEmpty(),
     ]
 ],
     
@@ -30,11 +30,12 @@ router.post('/', [
         }
 
         try {
-            const user = await User.findById(req.user.id).select('-password');
-
+            const user = await User.findById(req.user.id).select('-password');  
+            
             const newBuzz= new Buzz({
                 text: req.body.text,
                 category: req.body.category,
+                image: req.body.image,
                 name: user.name,
                 email: user.email,
                 avatar: user.avatar,

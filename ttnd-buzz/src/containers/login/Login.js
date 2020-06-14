@@ -20,8 +20,9 @@ if(isAuthenticated){
               <span className="logintexttooltip">The purpose of this app is to make the process of circulating events and concerns in a structured way.</span>
             </div>
             <Link to="/loginform">Login</Link><br></br>
+            {/* <a href="http://localhost:5000/login">Login with Gmail</a><br></br> */}
             <Link to="/registerform">Register</Link>
-            {/* <img href="http://localhost:5000" className="google" src={google} alt="sign in logo" /> */}
+            {/* <img href="#!" className="google" src={google} alt="sign in logo" /> */}
         </div>
     </main>
   );  

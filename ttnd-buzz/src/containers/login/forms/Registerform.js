@@ -4,6 +4,7 @@ import {Link,Redirect} from 'react-router-dom';
 import { setAlert } from '../../../actions/alert';
 import { register } from '../../../actions/auth';
 import PropTypes from 'prop-types';
+import '../Login.css';
 import axios from 'axios';
 
 const RegisterForm = ({ setAlert,register,isAuthenticated }) => {
@@ -53,6 +54,7 @@ const RegisterForm = ({ setAlert,register,isAuthenticated }) => {
 
   return (
     <Fragment>
+      <div  className='LoginForm'>
       <h1 className="large text-primary">Sign Up</h1>
       <p className="lead"><i className="fas fa-user"></i> Create Your Account</p>
       <form className="form" onSubmit={e => onSubmit(e)}>
@@ -65,10 +67,6 @@ const RegisterForm = ({ setAlert,register,isAuthenticated }) => {
         <div className="form-group">
           <input type="email" placeholder="Email Address" name="email" value={email}
             onChange={e =>onChange(e)}  />
-          <small className="form-text"
-            >This site uses Gravatar so if you want a profile image, use a
-            Gravatar email</small
-          >
         </div>
         <div className="form-group">
           <input
@@ -95,6 +93,7 @@ const RegisterForm = ({ setAlert,register,isAuthenticated }) => {
       <p className="my-1">
         Already have an account? <Link to="/loginform">Sign In</Link>
       </p>
+      </div>
     </Fragment>
   );  
 }

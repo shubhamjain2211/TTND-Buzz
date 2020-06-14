@@ -44,6 +44,11 @@
     width: 20%;
 }
 
+.DeleteBuzz{
+    background-color: #fff;
+    border: 0;
+}
+
 .DeleteBuzz:hover{
     color: red;
     font-size: 1.1rem;

@@ -4,7 +4,9 @@ import{
     GET_BUZZS,
     BUZZ_ERROR,
     UPDATE_LIKES,
-    UPDATE_DISLIKES
+    UPDATE_DISLIKES,
+    DELETE_BUZZ,
+    ADD_BUZZ
 } from './types';
 
 // GET BUZZ
@@ -48,12 +50,72 @@ export const addDislike = id => async dispatch => {
 
         dispatch({
             type: UPDATE_DISLIKES,
-            payload: { id, likes: res.data}
+            payload: { id, dislikes: res.data}
         });
     } catch (err) {
         dispatch({
             type: BUZZ_ERROR,
             payload: {msg: err.response.statusText, status: err.response.status }
         });
+    }
+}
+// DELETE BUZZ
+export const deleteBuzz = id => async dispatch => {
+    try {
+        const res = await axios.delete(`/api/buzz/${id}`);
+
+        dispatch({
+            type: DELETE_BUZZ,
+            payload: id
+        });
+
+        dispatch(setAlert('Buzz Removed', 'success'));
+    } catch (err) {
+        dispatch({
+            type: BUZZ_ERROR,
+            payload: {msg: err.response.statusText, status: err.response.status }
+        });
+    }
+}
+// ADD BUZZ
+export const addBuzz = (text,category,formFile) => async dispatch => {
+
+    try {
+        const config = {
+            headers: {
+              'content-type': 'multipart/form-data',
+            },
+          };
+          let response = await axios.post(
+            '/api/upload',
+            formFile,
+            config,
+          );
+
+          const image = response.data.path;
+
+          console.log('response::image', image);
+
+          const formData = {text:text,category:category,image:image};
+
+          const config1 = {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }
+        
+          const res = await axios.post('/api/buzz', formData, config1);
+
+            dispatch({
+                type: ADD_BUZZ,
+                payload: res.data
+            });
+
+            dispatch(setAlert('Buzz Created', 'success'));
+            } catch (err) {
+            dispatch({
+                type: BUZZ_ERROR,
+                payload: {msg: err.response.statusText, status: err.response.status }
+            });
     }
 }

@@ -2,7 +2,9 @@ import{
     GET_BUZZS,
     BUZZ_ERROR,
     UPDATE_LIKES,
-    UPDATE_DISLIKES
+    UPDATE_DISLIKES,
+    DELETE_BUZZ,
+    ADD_BUZZ
 } from '../actions\/types';
 
 const initialState = {
@@ -20,6 +22,19 @@ export default function( state = initialState, action ) {
             return {
                 ...state,
                 buzzs: payload,
+                loading: false
+            };
+        case ADD_BUZZ:{
+            return {
+                ...state,
+                buzzs: [payload,...state.buzzs],
+                loading: false
+            }
+        };
+        case DELETE_BUZZ:
+            return {
+                ...state,
+                buzzs: state.buzzs.filter(buzz => buzz._id !== payload),
                 loading: false
             };
         case BUZZ_ERROR:

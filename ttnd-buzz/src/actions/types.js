@@ -16,3 +16,6 @@ export const GET_COMPLAINTS = 'GET_COMPLAINTS';
 export const COMPLAINT_ERROR = 'COMPLAINT_ERROR';
 export const UPDATE_LIKES = 'UPDATE_LIKES';
 export const UPDATE_DISLIKES = 'UPDATE_DISLIKES';
+export const DELETE_BUZZ = 'DELETE_BUZZ';
+export const ADD_BUZZ = 'ADD_BUZZ';
+export const ADD_COMPLAINT = 'ADD_COMPLAINT';

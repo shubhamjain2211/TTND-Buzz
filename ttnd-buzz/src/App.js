@@ -6,7 +6,6 @@ import LoginForm from './containers/login/forms/Loginform';
 import RegisterForm from './containers/login/forms/Registerform';
 import Alert from './components/layouts/Alert';
 import Dashboard from './containers/dashboard/Dashboard';
-import Buzz from './components/buzz/Buzz';
 import Complaints from './components/complaints/Complaints';
 import Resolved from './components/resolved/Resolved';
 
