@@ -1,8 +1,8 @@
 .Complaintbox{
     width: 100%;
     border: 1px solid #dfdfdf;
-    display: flex;
-    flex-wrap: wrap;
+    /* display: flex; */
+    /* flex-wrap: wrap; */
     background-color: #ffffff;
     color: #b3aeae;
     border-radius: 0.2rem;
@@ -46,7 +46,7 @@
     filter: drop-shadow(2px 2px 2px #cfc8c8);
     font-weight: 500;
 }
-.width50{
+/* .width50{
     width: 46%;
 }
 .width100{
@@ -57,4 +57,4 @@
 }
 .width25{
     width:17%;
-}
+} */

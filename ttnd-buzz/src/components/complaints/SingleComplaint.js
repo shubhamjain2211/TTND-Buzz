@@ -11,12 +11,15 @@ const SingleComplaint = ( {auth, complaint: { _id, user, text, name,
     <Fragment>
         <div className='SingleComplaint'>
             <table className='ComplaintTable'>
+                <thead>
                 <tr>
                     <td>Department</td>
                     <td>Issue Id</td>
                     <td>Assigned To</td>
                     <td>Status</td>
                 </tr>
+                </thead>
+                <tbody>
                 <tr>
                     <td>
                         {department}
@@ -31,6 +34,8 @@ const SingleComplaint = ( {auth, complaint: { _id, user, text, name,
                         {status}
                     </td>
                 </tr>
+                </tbody>
+                <tfoot></tfoot>
             </table>
         </div>
     </Fragment>

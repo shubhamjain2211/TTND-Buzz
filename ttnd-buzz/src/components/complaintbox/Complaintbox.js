@@ -38,7 +38,7 @@ const ComplaintBox = ({ addComplaint }) => {
               <option>Infrastructure</option>
               <option>Others</option>
             </select>
-          </div><br/>
+          </div>
           <div className="width50"><label>Your Name</label>
             <input type="text" value={name} name='name' onChange={e =>onChange(e)} />
           </div>
@@ -50,8 +50,8 @@ const ComplaintBox = ({ addComplaint }) => {
           </div>
           <div className="width75"></div>
           <div className="width25">
-            <input className="attachment" type="image" value="Attachment"/>
-            <button>Submit</button>
+            {/* <input className="attachment" type="image" value="Attachment"/> */}
+            <button type='submit'>Submit</button>
           </div>
         </form>
     </div>
