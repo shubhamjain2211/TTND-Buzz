@@ -15,6 +15,8 @@ const ComplaintBox = ({ addComplaint }) => {
 
   const onSubmit = async e =>{
     e.preventDefault();
+    console.log("====================" , formData)
+    console.log(text, department, issueTitle, issueId, lockedBy, assignedTo, name, status,email);
     addComplaint(text, department, issueTitle, issueId, lockedBy, assignedTo, name, status,email);
   }
 

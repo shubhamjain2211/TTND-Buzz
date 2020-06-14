@@ -16,20 +16,25 @@ export const getComplaints = () => async dispatch => {
             payload: res.data
         });
     } catch (err) {
-        dispatch({
-            type: COMPLAINT_ERROR,
-            payload: {msg: err.response.statusText, status: err.response.status }
-        });
+        console.log(err)
+        // dispatch({
+        //     type: COMPLAINT_ERROR,
+        //     payload: {msg: err.response.statusText, status: err.response.status }
+        // });
     }
 }
 
 // ADD COMPLAINT
-export const addComplaint = (_id, user, text, name, 
-    department, issueTitle, issueId, lockedBy, assignedTo, status, date) => async dispatch => {
+export const addComplaint = (text, department, issueTitle, issueId, lockedBy, assignedTo, name, status,email) => async dispatch => {
 
     try {
-          const formData = JSON.Stringify({ _id, user, text, name, 
-            department, issueTitle, issueId, lockedBy, assignedTo, status, date });
+        let _id = issueId;
+        let user = lockedBy;
+
+          const formData = JSON.stringify({ _id, user, text, name, 
+            department, issueTitle, issueId, lockedBy, assignedTo, status});
+           
+            console.log(formData)
 
           const config = {
             headers: {
@@ -46,9 +51,10 @@ export const addComplaint = (_id, user, text, name,
 
             dispatch(setAlert('COMPLAINT Created', 'success'));
             } catch (err) {
-            dispatch({
-                type: COMPLAINT_ERROR,
-                payload: {msg: err.response.statusText, status: err.response.status }
-            });
+                console.log(err)
+            // dispatch({
+            //     type: COMPLAINT_ERROR,
+            //     payload: {msg: err.response.statusText, status: err.response.status }
+            // });
     }
 }

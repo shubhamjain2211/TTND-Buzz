@@ -24,7 +24,7 @@ export default function( state = initialState, action ) {
         case ADD_COMPLAINT:{
             return {
                 ...state,
-                buzzs: [payload,...state.buzzs],
+                complaints: [payload,...state.complaints],
                 loading: false
             }
         };

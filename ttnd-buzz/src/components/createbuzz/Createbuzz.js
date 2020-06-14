@@ -15,7 +15,7 @@ const CreateBuzz = ({ addBuzz }) => {
 
   const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value});
 
-  const onSubmit = async e =>{
+  const onSubmit = e =>{
     e.preventDefault();
     let formFile = new FormData();
     formFile.append('file', file);

@@ -29,12 +29,15 @@ router.post('/', [
     async (req,res) => {
         const errors = validationResult(req);
         if(!errors.isEmpty()) {
+            console.log(req.body)
+            console.log("it came here")
             return res.status(400).json({ errors: errors.array() });
         }
 
         try {
             const user = await User.findById(req.user.id).select('-password');
 
+            console.log(req.body)
             const newComplaint= new Complaint({
                 text: req.body.text,
                 department: req.body.department,
