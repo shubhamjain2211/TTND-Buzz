@@ -31,9 +31,6 @@ const App = () => {
       <Fragment>
         <Route exact path='/' component={Login} />
         <Route exact path='/dashboard' component={Dashboard} />
-        <Route exact path='/dashboard/buzz' component={Buzz} />
-        <Route exact path='/dashboard/complaint' component={Complaints} />
-        <Route exact path='/dashboard/resolve' component={Resolved} />
         <Alert />
         <Switch>
           <Route exact path='/loginform' component={LoginForm} />

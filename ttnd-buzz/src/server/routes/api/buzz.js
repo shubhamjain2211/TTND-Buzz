@@ -36,6 +36,7 @@ router.post('/', [
                 text: req.body.text,
                 category: req.body.category,
                 name: user.name,
+                email: user.email,
                 avatar: user.avatar,
                 user: req.user.id
             });

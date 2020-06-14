@@ -14,3 +14,5 @@ export const GET_BUZZS = 'GET_BUZZS';
 export const BUZZ_ERROR = 'BUZZ_ERROR';
 export const GET_COMPLAINTS = 'GET_COMPLAINTS';
 export const COMPLAINT_ERROR = 'COMPLAINT_ERROR';
+export const UPDATE_LIKES = 'UPDATE_LIKES';
+export const UPDATE_DISLIKES = 'UPDATE_DISLIKES';

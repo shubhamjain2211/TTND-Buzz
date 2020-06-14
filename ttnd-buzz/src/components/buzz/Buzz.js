@@ -4,16 +4,25 @@ import { connect } from 'react-redux';
 import Spinner from '../layouts/Spinner';
 import { getBuzz } from '../../actions/buzz';
 import './Buzz.css';
+import './SingleBuzz';
+import {Redirect} from 'react-router-dom';
+import SingleBuzz from './SingleBuzz';
 
-const Buzz = ({ getBuzz, buzz: {buzz, loading} }) => {
+const Buzz = ({ getBuzz, buzz: {buzzs, loading} }) => {
 
   useEffect(() => {
     getBuzz();
   }, [getBuzz]);
 
   return (
+    loading? <Spinner/> :
     <Fragment>
-      Buzz
+      <div className='RecentBuzz'>@ Recent Buzz</div>
+      <div>
+        {buzzs.map(buzz =>(
+          <SingleBuzz key={buzz._id} buzz={buzz} />
+        ))}
+      </div>
     </Fragment>
   );
 }
@@ -24,7 +33,7 @@ Buzz.propTypes = {
 }
 
 const mapStateToProps = state =>({
-  buzz: state.buzz
+  buzz: state.buzz,
 });
 
 export default connect( mapStateToProps, { getBuzz } )(Buzz);

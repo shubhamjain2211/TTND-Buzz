@@ -4,7 +4,7 @@ import './Createbuzz.css';
 function CreateBuzz() {
   return (
     <div className="Createbuzz">
-      <div className="heading"><span><i class="fas fa-pen"></i>  Create Buzz</span></div>
+      <div className="heading"><span><i className="fas fa-pen"></i>  Create Buzz</span></div>
         <div>
           <textarea placeholder="Share your thought..."></textarea>
         </div>
@@ -17,7 +17,7 @@ function CreateBuzz() {
           </select>
           <input className="attachment" value=" " type="image"/>
           </span>
-          <button><i class="fas fa-caret-right"></i></button>
+          <button><i className="fas fa-caret-right"></i></button>
         </div>
     </div>
   );

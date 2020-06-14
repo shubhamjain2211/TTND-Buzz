@@ -30,7 +30,7 @@ const Dashboard = ({ getCurrentProfile, auth, profile:{profile,loading} })   => 
     <Fragment>
       <Logout/>
       <Banner/>
-      <p className="Welcome"><i class="fas fa-user"></i> Welcome { auth.user && auth.user.name }</p>
+      <p className="Welcome"><i className="fas fa-user"></i> Welcome { auth.user && auth.user.name }</p>
       <p className="Email">Logged in as { auth.user && auth.user.email }</p>
       {profile !== null? 
       <Fragment>

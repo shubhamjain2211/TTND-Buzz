@@ -1,0 +1,60 @@
+.RecentBuzz{
+    font-weight: 800;
+    border: 1px solid  #dfdfdf;
+    background-color: #dfdfdf;
+    padding: 0.5rem 1rem;
+    margin: 0;
+    width: 100%;
+    color: black;
+    border-radius: 0.2rem;
+}
+
+.SingleBuzz{
+    width: 100%;
+    border: 1px solid #dfdfdf;
+    background-color: #ffffff;
+    color: #b3aeae;
+    border-radius: 0.2rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.SingleBuzz .text,.Category{
+    color: #535252;
+}
+
+.ProfilePic{
+    border-radius: 50%;
+    width: 8rem;
+}
+
+.StatusBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.StatusBar button{
+    border: none;
+    background-color: #fff;
+}
+
+.StatusBar p{
+    width: 20%;
+}
+
+.DeleteBuzz:hover{
+    color: red;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.fa-thumbs-up:hover, .fa-thumbs-down:hover{
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: green;
+}
+.fa-thumbs-down:hover{
+    color: red;
+}
