@@ -6,8 +6,8 @@ import LoginForm from './containers/login/forms/Loginform';
 import RegisterForm from './containers/login/forms/Registerform';
 import Alert from './components/layouts/Alert';
 import Dashboard from './containers/dashboard/Dashboard';
-import Complaints from './components/complaints/Complaints';
-import Resolved from './components/resolved/Resolved';
+import DashboardComplaints from './containers/dashboard/DashboardComplaints';
+import DashboardResolved from './containers/dashboard/DashboardResolved';
 
 //Redux
 import { Provider } from 'react-redux';
@@ -30,6 +30,8 @@ const App = () => {
       <Fragment>
         <Route exact path='/' component={Login} />
         <Route exact path='/dashboard' component={Dashboard} />
+        <Route exact path='/complaints' component={DashboardComplaints} />
+        <Route exact path='/resolved' component={DashboardResolved} />
         <Alert />
         <Switch>
           <Route exact path='/loginform' component={LoginForm} />

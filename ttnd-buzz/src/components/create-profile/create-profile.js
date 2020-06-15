@@ -28,12 +28,14 @@ const CreateProfile = ({ createProfile }) =>{
             <form onSubmit={e => onSubmit(e)}>
             <div className=""><label><strong>Select Status:</strong></label>
             <select name='status' value={status} onChange={e => onChange(e)}>
+              <option></option>
               <option>Employee</option>
               <option>Admin</option>
             </select>
           </div>
           <div className=""><label><strong>Select Department:</strong></label>
             <select name='department' value={department} onChange={e => onChange(e)}>
+              <option></option>
               <option>Development</option>
               <option>Admin</option>
               <option>Infra</option>

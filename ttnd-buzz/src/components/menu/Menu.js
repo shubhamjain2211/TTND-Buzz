@@ -5,8 +5,8 @@ import './Menu.css';
 function Menu() {
   return (
     <Fragment>
-      <div className="Menu"><span>Buzz</span><i className="fas fa-caret-right"></i></div>
-      <div className="Menu"><span>Complaints</span><i className="fas fa-caret-right"></i></div>
+      <Link to='/dashboard'><div className="Menu"><span>Buzz</span><i className="fas fa-caret-right"></i></div></Link>
+      <Link to='/complaints'><div className="Menu"><span>Complaints</span><i className="fas fa-caret-right"></i></div></Link>
       <div className="MenuFooter"><i className="far fa-copyright"></i> 2016 To The New Digital <a target="_blank" href="https://www.tothenew.com/about-us">About</a> <a target="_blank" href="https://www.tothenew.com/contact-us">Help</a></div>
     </Fragment>
   );

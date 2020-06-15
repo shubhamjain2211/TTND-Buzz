@@ -40,7 +40,7 @@ const Dashboard = ({ getCurrentProfile, auth, profile:{profile,loading} })   => 
             {profile.status=='Admin'?<MenuAdmin/>:<Menu/>}
           </div>
           <div className="DashboardArea">
-            <Buzz/>
+            <Resolved/>
           </div>
         </div>
       </Fragment> : 

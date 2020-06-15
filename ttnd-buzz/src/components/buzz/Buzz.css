@@ -63,3 +63,7 @@
 .fa-thumbs-down:hover{
     color: red;
 }
+
+.imageBuzz{
+    width: 50vh;
+}

@@ -6,14 +6,14 @@ import Moment from 'react-moment';
 import './Buzz.css';
 import { addLike, addDislike, deleteBuzz }  from '../../actions/buzz';
 
-const SingleBuzz = ( {addLike, addDislike, deleteBuzz, auth, buzz: {_id, text, category, email, name, avatar, user, likes, dislikes, date}}) =>{
+const SingleBuzz = ( {addLike, addDislike, deleteBuzz, auth, buzz: {_id, text, category, image, email, name, avatar, user, likes, dislikes, date}}) =>{
     return(
         <div className='SingleBuzz'>
             <p className='Category'>{category}</p>
             <img className='ProfilePic' src={avatar} alt='Profile Picture'></img>
             <h5>{name}</h5>
             <h6>({email})</h6>
-            <p>Image is supposed to be here</p>
+            <img className='imageBuzz' src={image}/>
             <p className='text'>{text}</p>
             <div className='StatusBar'>
                 <p>Posted On: <Moment format='DD/MM/YYYY'>{date}</Moment></p>    
