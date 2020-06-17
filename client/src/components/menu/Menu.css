@@ -14,7 +14,8 @@
 .Menu:hover{
     filter:drop-shadow(2px 2px 2px);
     cursor: pointer;
-    font-weight: 1000;;
+    font-weight: 1000;
+    text-decoration: underline white;
 }
 
 .MenuFooter{

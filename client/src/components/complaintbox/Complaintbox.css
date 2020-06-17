@@ -1,18 +1,4 @@
-.Complaintbox{
-    width: 100%;
-    border: 1px solid #dfdfdf;
-    /* display: flex; */
-    /* flex-wrap: wrap; */
-    background-color: #ffffff;
-    color: #b3aeae;
-    border-radius: 0.2rem;
-}
-.Complaintbox div{
-    display: flex;    
-    flex-direction: column;
-    margin: 2%;
-}
-.Complaintbox .heading{
+.ComplaintBoxHeading{
     font-weight: 800;
     border: 1px solid  #dfdfdf;
     background-color: #dfdfdf;
@@ -23,12 +9,40 @@
     border-radius: 0.2rem;
 }
 
-.Complaintbox input,select,textarea{
+.Complaintbox{
+    border: 1px solid #dfdfdf;
+    background-color: #ffffff;
+    color: #b3aeae;
+    border-radius: 0.2rem;
+}
+.ComplaintBoxDivSmall div{
+    display: flex;    
+    flex-direction: column;
+    margin: 1%;
+    width: 48%;
+    text-align: center;
+}
+
+.ComplaintBoxDivSmall{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Complaintbox input,select{
     padding: 1rem;
     background-color: #ffffff;
     border: 1px solid #dfdfdf;
     border-radius: 0.2rem;
 }
+
+.Complaintbox textarea{
+    margin: 1%;
+    background-color: #ffffff;
+    border: 1px solid #dfdfdf;
+    border-radius: 0.2rem;
+    width: 96%;
+}
+
 .Complaintbox .attachment{
     border: 1px solid white;
     color: #b3aeae;
@@ -40,21 +54,10 @@
     background-color: #dfdfdf;
     border: 1px solid #cfc8c8;
     border-radius: 0.2rem;
+    width: fit-content;
 }
 .Complaintbox button:hover{
     cursor: pointer;
     filter: drop-shadow(2px 2px 2px #cfc8c8);
     font-weight: 500;
 }
-/* .width50{
-    width: 46%;
-}
-.width100{
-    width:96%;
-}
-.width75{
-    width:75%;
-}
-.width25{
-    width:17%;
-} */

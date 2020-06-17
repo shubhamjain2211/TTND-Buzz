@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,Fragment } from 'react';
 import './Complaintbox.css';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -15,25 +15,41 @@ const ComplaintBox = ({ addComplaint }) => {
 
   const onSubmit = async e =>{
     e.preventDefault();
-    console.log("====================" , formData)
+    console.log("Complaint Box FormData" , formData)
     console.log(text, department, issueTitle, issueId, lockedBy, assignedTo, name, status,email);
     addComplaint(text, department, issueTitle, issueId, lockedBy, assignedTo, name, status,email);
   }
 
   return (
-    <div className="Complaintbox">
-      <div className="width100 heading">Complaint Box</div>
-      <form onSubmit={e => onSubmit(e)}>
-          <div className="width50"><label>Select Department</label>
-            <select value={department} name='department' onChange={e =>onChange(e)}>
-              <option></option>
-              <option>Admin</option>
-              <option>Infra</option>
-              <option>IT</option>
-              <option>HR</option>
+    <Fragment>
+    <div className="ComplaintBoxHeading">Complaint Box</div>
+      <div className="Complaintbox">
+        
+        <form onSubmit={e => onSubmit(e)}>
+          
+          <div className="ComplaintBoxDivSmall">
+            
+            <div><label>Your Name</label>
+              <input type="text" value={name} name='name' onChange={e =>onChange(e)} />
+            </div>
+
+            <div><label>Email Id</label>
+              <input type="email"  value={email} name='email' onChange={e =>onChange(e)}/>
+            </div>
+            
+            <div>
+              <label>Select Department</label>
+              <select value={department} name='department' onChange={e =>onChange(e)}>
+                <option></option>
+                <option>Admin</option>
+                <option>Infra</option>
+                <option>IT</option>
+                <option>HR</option>
             </select>
           </div>
-          <div className="width50"><label>Issue Title</label>
+
+          <div>
+            <label>Issue Title</label>
             <select value={issueTitle} name='issueTitle' onChange={e =>onChange(e)}>
               <option></option>
               <option>Hardware</option>
@@ -41,22 +57,23 @@ const ComplaintBox = ({ addComplaint }) => {
               <option>Others</option>
             </select>
           </div>
-          <div className="width50"><label>Your Name</label>
-            <input type="text" value={name} name='name' onChange={e =>onChange(e)} />
+
+        </div>
+
+          <div>
+            <textarea value={text} name='text' placeholder="Your Concern" onChange={e =>onChange(e)}></textarea>
           </div>
-          <div className="width50"><label>Email Id</label>
-            <input type="email"  value={email} name='email' onChange={e =>onChange(e)}/>
-          </div>
-          <div className="width100"><label>Your Concern</label>
-            <textarea value={text} name='text' onChange={e =>onChange(e)}></textarea>
-          </div>
-          <div className="width75"></div>
-          <div className="width25">
-            {/* <input className="attachment" type="image" value="Attachment"/> */}
+
+          <div></div>
+          <div>
+            <input className="attachment" type="image" value="Attachment"/>
             <button type='submit'>Submit</button>
           </div>
+
         </form>
-    </div>
+      </div>
+      
+    </Fragment>
   );
 }
 ComplaintBox.propTypes = {

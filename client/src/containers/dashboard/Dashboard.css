@@ -48,4 +48,5 @@
     cursor: pointer;
     filter: drop-shadow(2px 2px 2px #cfc8c8);
     font-weight: 500;
+    text-decoration: none;
 }
