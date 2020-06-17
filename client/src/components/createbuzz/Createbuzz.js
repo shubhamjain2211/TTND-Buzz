@@ -8,7 +8,7 @@ const CreateBuzz = ({ addBuzz }) => {
   const [file, setFile] = useState(null);
   const [formData , setFormData] = useState({
     text:'',
-    category:''
+    category:'',
   });
 
   const { text,category } = formData; 
@@ -42,7 +42,7 @@ const CreateBuzz = ({ addBuzz }) => {
           </select>
           <input className='attachment' type="file" name="file" onChange={()=>{onFileChangeHandler(window.event)}}></input>
           </span>
-          <button><i className="fas fa-caret-right"></i></button>
+          <button><i className="fas fa-chevron-circle-right"></i></button>
         </div>
         </form>
     </div>

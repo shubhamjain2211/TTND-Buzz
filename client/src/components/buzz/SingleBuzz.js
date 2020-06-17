@@ -6,23 +6,50 @@ import Moment from 'react-moment';
 import './Buzz.css';
 import { addLike, addDislike, deleteBuzz }  from '../../actions/buzz';
 
-const SingleBuzz = ( {addLike, addDislike, deleteBuzz, auth, buzz: {_id, text, category, image, email, name, avatar, user, likes, dislikes, date}}) =>{
+const SingleBuzz = ( {addLike, addDislike, deleteBuzz, auth, 
+    buzz: {_id, text, category, image, email, name, avatar, user, likes, dislikes, date}}) =>{
     return(
         <div className='SingleBuzz'>
-            <p className='Category'>{category}</p>
-            <img className='ProfilePic' src={avatar} alt='Profile Picture'></img>
-            <h5>{name}</h5>
-            <h6>({email})</h6>
-            <img className='imageBuzz' src={image}/>
-            <p className='text'>{text}</p>
-            <div className='StatusBar'>
-                <p>Posted On: <Moment format='DD/MM/YYYY'>{date}</Moment></p>    
-                <div><button onClick={ e => addLike(_id) } type='button'>{likes.length}&nbsp;<i className="far fa-thumbs-up"></i></button>&nbsp;&nbsp;&nbsp;&nbsp;
-                <button onClick={ e => addDislike(_id) } type='button'>{dislikes.length}&nbsp;<i className="far fa-thumbs-down"></i></button></div>
+            <div className='BuzzOwner'>
+                <div className="ProfilePicDiv">
+                    <img className='ProfilePic ' src={avatar} alt='Profile Picture'></img>
+                    {name}
+                    <span className="texttooltip">{email}</span>
+                </div>
+                <div>
+                    {!auth.loading && user === auth.user._id && (
+                    <button onClick={e =>deleteBuzz(_id)} className='DeleteBuzz' 
+                    type='button'><i className="fas fa-trash-alt"></i></button>
+                    )}
+                    <div className='CategoryDiv'>
+                        <i class="fas fa-star"></i> {category}
+                    </div>
+                </div>
             </div>
-            {!auth.loading && user === auth.user._id && (
-                <button onClick={e =>deleteBuzz(_id)} className='DeleteBuzz' type='button'>Delete <i className="fas fa-trash-alt"></i></button>
-            )}
+
+            <div className='BuzzContent'>
+                <p className='text'>{text}</p>
+                <img className='imageBuzz' src={image}/>
+            </div>
+
+            <div className='StatusBar'>
+                <div>
+                    {/* <Moment format='DD.MM.YY'>{date}</Moment> */}
+                    <Moment toNow>{date}</Moment>
+                </div>
+                <div>
+                    <button onClick={ e => addLike(_id) } type='button'>
+                        {likes.length}&nbsp;
+                        <i className="far fa-thumbs-up">
+                        </i>
+                    </button>&nbsp;&nbsp;
+                    <button onClick={ e => addDislike(_id) } type='button'>
+                         {dislikes.length}&nbsp;<i className="far fa-thumbs-down">
+                        </i>
+                    </button>
+                </div>
+            </div>
+
         </div>
     )
 };
