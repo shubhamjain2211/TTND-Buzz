@@ -6,18 +6,18 @@ import { addComplaint } from '../../actions/complaint';
 
 const ComplaintBox = ({ addComplaint }) => {
   const [formData, setFormData] = useState({
-    email:'', text:'', department:'', issueTitle:'', issueId:'', lockedBy:'', assignedTo:'', status:'',name:''
+     text:'', department:'', issueTitle:''
   });
 
-  const { text, department, issueTitle, issueId, lockedBy, assignedTo, status,name,email } = formData; 
+  const { text, department, issueTitle} = formData; 
 
   const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value});
 
   const onSubmit = async e =>{
     e.preventDefault();
     console.log("Complaint Box FormData" , formData)
-    console.log(text, department, issueTitle, issueId, lockedBy, assignedTo, name, status,email);
-    addComplaint(text, department, issueTitle, issueId, lockedBy, assignedTo, name, status,email);
+    console.log(text, department, issueTitle);
+    addComplaint(text, department, issueTitle);
   }
 
   return (
@@ -29,12 +29,12 @@ const ComplaintBox = ({ addComplaint }) => {
           
           <div className="ComplaintBoxDivSmall">
             
-            <div><label>Your Name</label>
-              <input type="text" value={name} name='name' onChange={e =>onChange(e)} />
+            <div><label>Your Name:</label>
+            <strong><label className='Name_Email'>name appears here</label></strong>
             </div>
 
-            <div><label>Email Id</label>
-              <input type="email"  value={email} name='email' onChange={e =>onChange(e)}/>
+            <div><label>Email Id:</label>
+            <strong><label className='Name_Email'>email appears here</label></strong>
             </div>
             
             <div>
@@ -64,10 +64,9 @@ const ComplaintBox = ({ addComplaint }) => {
             <textarea value={text} name='text' placeholder="Your Concern" onChange={e =>onChange(e)}></textarea>
           </div>
 
-          <div></div>
-          <div>
-            <input className="attachment" type="image" value="Attachment"/>
-            <button type='submit'>Submit</button>
+          <div className='SubmitButtonDiv'>
+            <div><input className='attachment' type="file" name="file"></input></div>
+            <div><button type='submit'>Submit</button></div>
           </div>
 
         </form>

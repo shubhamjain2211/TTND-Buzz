@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Spinner from '../layouts/Spinner';
 import { getComplaints } from '../../actions/complaint';
-import {Redirect} from 'react-router-dom';
 import SingleComplaint from './SingleComplaint';
 import ComplaintBox from '../complaintbox/Complaintbox';
 
@@ -19,6 +18,18 @@ const Complaints = ({ getComplaints, complaint: {complaints, loading} }) => {
     <Fragment>
       <ComplaintBox />
       <div className='YourComplaints'>Your Complaints</div>
+      <div className='SingleComplaint'>
+            <table className='ComplaintTable'>
+                <thead>
+                <tr>
+                    <td>Department</td>
+                    <td>Issue Id</td>
+                    <td>Assigned To</td>
+                    <td>Status</td>
+                </tr>
+              </thead>
+            </table>
+      </div>
       <div>
         {complaints.map(complaint =>(
           <SingleComplaint key={complaint._id} complaint={complaint} />

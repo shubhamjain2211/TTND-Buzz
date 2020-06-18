@@ -2,10 +2,10 @@ const express = require('express');
 const router = express.Router();
 const { check,validationResult } = require('express-validator');
 const auth = require('../../middleware/auth');
+const uniqid = require('uniqid');
 
 const Profile = require('../../models/Profile');
 const User = require('../../models/User');
-const Buzz = require('../../models/Buzz');
 const Complaint = require('../../models/Complaint');
 
 //@route   Post api/complaint
@@ -29,21 +29,31 @@ router.post('/', [
     async (req,res) => {
         const errors = validationResult(req);
         if(!errors.isEmpty()) {
-            console.log(req.body)
-            console.log("it came here")
+            // console.log(req. body);
             return res.status(400).json({ errors: errors.array() });
         }
 
         try {
-            const user = await User.findById(req.user.id).select('-password');
+            const profile = await Profile.find({
+                'status': 'Admin',
+                'department' : req.body.department
+            }).select('user');
 
-            console.log(req.body)
+            const user = await User.findById(req.user.id).select('-password');
+            const assignedToName = await User.findById(profile[0].user).select('name');
+
             const newComplaint= new Complaint({
+                user: req.user.id,
                 text: req.body.text,
+                name: user.name,
+                email: user.email,
                 department: req.body.department,
                 issueTitle: req.body.issueTitle,
-                name: user.name,
-                user: req.user.id
+                issueId: uniqid(),
+                assignedTo: assignedToName.name,
+                lockedBy: assignedToName.name,
+                assignedToId: profile[0].user,
+                status: "Pending"
             });
             
             const complaint = await newComplaint.save();

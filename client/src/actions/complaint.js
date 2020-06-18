@@ -25,14 +25,13 @@ export const getComplaints = () => async dispatch => {
 }
 
 // ADD COMPLAINT
-export const addComplaint = (text, department, issueTitle, issueId, lockedBy, assignedTo, name, status,email) => async dispatch => {
+export const addComplaint = (text, department, issueTitle) => async dispatch => {
 
     try {
-        let _id = issueId;
-        let user = lockedBy;
+        // let _id = issueId;
+        // let user = lockedBy;
 
-          const formData = JSON.stringify({ _id, user, text, name, 
-            department, issueTitle, issueId, lockedBy, assignedTo, status});
+          const formData = JSON.stringify({ text, department, issueTitle});
            
             console.log(formData)
 
@@ -51,7 +50,7 @@ export const addComplaint = (text, department, issueTitle, issueId, lockedBy, as
 
             dispatch(setAlert('COMPLAINT Created', 'success'));
             } catch (err) {
-                console.log(err)
+                console.log(err);
             // dispatch({
             //     type: COMPLAINT_ERROR,
             //     payload: {msg: err.response.statusText, status: err.response.status }

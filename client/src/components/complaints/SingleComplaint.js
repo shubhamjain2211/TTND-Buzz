@@ -1,8 +1,6 @@
 import React,{Fragment, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import Moment from 'react-moment';
 import './Complaints.css';
 
 const SingleComplaint = ( {auth, complaint: { _id, user, text, name, 
@@ -11,14 +9,6 @@ const SingleComplaint = ( {auth, complaint: { _id, user, text, name,
     <Fragment>
         <div className='SingleComplaint'>
             <table className='ComplaintTable'>
-                <thead>
-                <tr>
-                    <td>Department</td>
-                    <td>Issue Id</td>
-                    <td>Assigned To</td>
-                    <td>Status</td>
-                </tr>
-                </thead>
                 <tbody>
                 <tr>
                     <td>

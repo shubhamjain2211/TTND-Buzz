@@ -15,7 +15,7 @@ function Menu() {
       <Link to='/resolved'><div className="Menu"><span>Resolved</span>
       <i className="fas fa-caret-right"></i></div></Link>
       
-      <div className="MenuFooter"><i className="far fa-copyright"></i> 2016 To The New Digital <a target="_blank" href="https://www.tothenew.com/about-us">About</a> <a target="_blank" href="https://www.tothenew.com/contact-us">Help</a></div>
+      <div className="MenuFooter"><i className="far fa-copyright"></i> 2020 To The New Digital <a rel="noopener noreferrer" target="_blank" href="https://www.tothenew.com/about-us">About</a> <a rel="noopener noreferrer" target="_blank" href="https://www.tothenew.com/contact-us">Help</a></div>
     </Fragment>
   );
 }

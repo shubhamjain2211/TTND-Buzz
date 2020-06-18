@@ -19,13 +19,25 @@
     color: rgba(22, 22, 22, 0.651);
     text-align: center;
     margin: 0;
+    position: relative;
+    display: block;
 }
 .Email{
     font-weight: 300;
-    color: rgba(22, 22, 22, 0.651);
     text-align: center;
     margin: 0;
+    background-color: #ebe4e460;
+    color: rgb(83, 83, 83);
+    border-radius: 0.5px;
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
 }
+  
+.WelcomeHover:hover .Email{
+    visibility: visible;
+}
+
 .DashboardProfile{
     width: 80%;
     margin: 1rem auto;

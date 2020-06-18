@@ -1,5 +1,5 @@
 .logout{
-    height: 8vh;
+    height: 6vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -16,9 +16,7 @@
     cursor: pointer;
     filter:drop-shadow(2px 2px 4px white);
 }
-.logoutlogo{
-    height: 2vh;
-}
+
 a{
     color: rgb(243, 132, 92);
     margin: 1rem;

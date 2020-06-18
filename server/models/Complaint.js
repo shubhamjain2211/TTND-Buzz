@@ -13,6 +13,9 @@ const ComplaintSchema = new Schema({
     name: {
         type : String,
     },
+    email: {
+        type : String,
+    },
     department: {
         type : String,
     },
@@ -23,10 +26,12 @@ const ComplaintSchema = new Schema({
         type : String,
     },
     lockedBy: {
-        type: Schema.Types.ObjectId,
-        ref : 'user'
+        type : String,
     },
     assignedTo: {
+        type: String,
+    },
+    assignedToId: {
         type: Schema.Types.ObjectId,
         ref : 'user'
     },

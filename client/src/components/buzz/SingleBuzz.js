@@ -22,7 +22,7 @@ const SingleBuzz = ( {addLike, addDislike, deleteBuzz, auth,
                     type='button'><i className="fas fa-trash-alt"></i></button>
                     )}
                     <div className='CategoryDiv'>
-                        <i class="fas fa-star"></i> {category}
+                        <i className="fas fa-star"></i> {category}
                     </div>
                 </div>
             </div>

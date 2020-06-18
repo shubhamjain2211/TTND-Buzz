@@ -1,7 +1,6 @@
 import React,{Fragment} from 'react';
 import './Logout.css';
 import Logo from '../../resources/logo/ttn.png';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../actions/auth';
