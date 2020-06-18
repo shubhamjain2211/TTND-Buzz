@@ -7,6 +7,7 @@ import RegisterForm from './containers/login/forms/Registerform';
 import Alert from './components/layouts/Alert';
 import Dashboard from './containers/dashboard/Dashboard';
 import DashboardComplaints from './containers/dashboard/DashboardComplaints';
+import DashboardComplaintsIssueId from './containers/dashboard/DashboardComplaintsIssueId';
 import DashboardResolved from './containers/dashboard/DashboardResolved';
 
 //Redux
@@ -31,6 +32,7 @@ const App = () => {
         <Route exact path='/' component={Login} />
         <Route exact path='/dashboard' component={Dashboard} />
         <Route exact path='/complaints' component={DashboardComplaints} />
+        <Route exact path='/complaints/issueId' component={DashboardComplaintsIssueId} />
         <Route exact path='/resolved' component={DashboardResolved} />
         <Alert />
         <Switch>

@@ -2,6 +2,7 @@ import React,{Fragment, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import './Complaints.css';
+import { Link } from 'react-router-dom';
 
 const SingleComplaint = ( {auth, complaint: { _id, user, text, name, 
     department, issueTitle, issueId, lockedBy, assignedTo, status, date }}) =>{
@@ -15,7 +16,7 @@ const SingleComplaint = ( {auth, complaint: { _id, user, text, name,
                         {department}
                     </td>
                     <td>
-                        {issueId}
+                        <Link to="/complaints/issueId">{issueId}</Link>
                     </td>
                     <td>
                         {assignedTo}

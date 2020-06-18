@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const { check,validationResult } = require('express-validator');
 const auth = require('../../middleware/auth');
-const uniqid = require('uniqid');
 
 const Profile = require('../../models/Profile');
 const User = require('../../models/User');
@@ -49,7 +48,6 @@ router.post('/', [
                 email: user.email,
                 department: req.body.department,
                 issueTitle: req.body.issueTitle,
-                issueId: uniqid(),
                 assignedTo: assignedToName.name,
                 lockedBy: assignedToName.name,
                 assignedToId: profile[0].user,

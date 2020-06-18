@@ -29,7 +29,7 @@ const SingleBuzz = ( {addLike, addDislike, deleteBuzz, auth,
 
             <div className='BuzzContent'>
                 <p className='text'>{text}</p>
-                <a href={image} target='_blank'><img className='imageBuzz' src={image}/></a>
+                {image?<a href={image} target='_blank'><img className='imageBuzz' src={image}/></a>:null}
             </div>
 
             <div className='StatusBar'>

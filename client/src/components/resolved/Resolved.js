@@ -1,5 +1,5 @@
 import React,{Fragment,useEffect} from 'react';
-import './Resolved.css';
+import './Resolved';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Spinner from '../layouts/Spinner';
@@ -17,6 +17,17 @@ const Complaints = ({ getComplaints, complaint: {complaints, loading} }) => {
     <Fragment>
       <div className='YourComplaints'>Your Complaints</div>
       <div>
+      <table className='ComplaintTable'>
+                <thead>
+                <tr>
+                    <td>Department</td>
+                    <td>Issue Id</td>
+                    <td>Assigned To</td>
+                    <td>Locked By</td>
+                    <td>Status</td>
+                </tr>
+                </thead>
+      </table>
         {complaints.map(complaint =>(
           <SingleResolved key={complaint._id} complaint={complaint} />
         ))}

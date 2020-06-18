@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const uniqid = require('uniqid');
 const Schema = mongoose.Schema;
 
 const ComplaintSchema = new Schema({
@@ -24,6 +25,7 @@ const ComplaintSchema = new Schema({
     },
     issueId: {
         type : String,
+        default: uniqid()
     },
     lockedBy: {
         type : String,

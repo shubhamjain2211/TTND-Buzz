@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addComplaint } from '../../actions/complaint'; 
 
-const ComplaintBox = ({ addComplaint }) => {
+const ComplaintBox = ({ addComplaint, auth }) => {
   const [formData, setFormData] = useState({
      text:'', department:'', issueTitle:''
   });
@@ -30,11 +30,11 @@ const ComplaintBox = ({ addComplaint }) => {
           <div className="ComplaintBoxDivSmall">
             
             <div><label>Your Name:</label>
-            <strong><label className='Name_Email'>name appears here</label></strong>
+            <strong><label className='Name_Email'>{auth.user.name}</label></strong>
             </div>
 
             <div><label>Email Id:</label>
-            <strong><label className='Name_Email'>email appears here</label></strong>
+            <strong><label className='Name_Email'>{auth.user.email}</label></strong>
             </div>
             
             <div>
@@ -76,7 +76,12 @@ const ComplaintBox = ({ addComplaint }) => {
   );
 }
 ComplaintBox.propTypes = {
-  addComplaint: PropTypes.func.isRequired
+  addComplaint: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired
 }
 
-export default connect(null, { addComplaint })( ComplaintBox );
+const mapStateToProps = state => ({
+  auth: state.auth,
+});
+
+export default connect(mapStateToProps, { addComplaint })( ComplaintBox );

@@ -17,9 +17,6 @@ router.post('/', [
         check('text', 'Text is required')
         .not()
         .isEmpty(),
-        check('category', 'Category is required')
-        .not()
-        .isEmpty(),
     ]
 ],
     
@@ -32,9 +29,14 @@ router.post('/', [
         try {
             const user = await User.findById(req.user.id).select('-password');  
             
+            // Set Default Value for Category
+            let category = req.body.category;
+            if(category=='')
+            category='Activity Buzz';
+
             const newBuzz= new Buzz({
                 text: req.body.text,
-                category: req.body.category,
+                category: category,
                 image: req.body.image,
                 name: user.name,
                 email: user.email,

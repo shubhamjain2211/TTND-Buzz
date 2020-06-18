@@ -1,7 +1,7 @@
 import React,{Fragment, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import './Resolved';
+import './Resolved.css';
 
 const SingleComplaint = ( {auth, complaint: { _id, user, text, name, 
     department, issueTitle, issueId, lockedBy, assignedTo, status, date }}) =>{
@@ -9,32 +9,13 @@ const SingleComplaint = ( {auth, complaint: { _id, user, text, name,
     <Fragment>
         <div className='SingleComplaint'>
             <table className='ComplaintTable'>
-                <thead>
-                <tr>
-                    <td>Department</td>
-                    <td>Issue Id</td>
-                    <td>Assigned To</td>
-                    <td>Locked By</td>
-                    <td>Status</td>
-                </tr>
-                </thead>
                 <tbody>
                 <tr>
-                    <td>
-                        {department}
-                    </td>
-                    <td>
-                        {issueId}
-                    </td>
-                    <td>
-                        {lockedBy}
-                    </td>
-                    <td>
-                        {assignedTo}
-                    </td>
-                    <td>
-                        {status}
-                    </td>
+                    <td>{department}</td>
+                    <td>{issueId}</td>
+                    <td>{lockedBy}</td>
+                    <td>{assignedTo}</td>
+                    <td>{status}</td>
                 </tr>
                 </tbody>
                 <tfoot></tfoot>
