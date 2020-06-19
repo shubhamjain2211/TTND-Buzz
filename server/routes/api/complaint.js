@@ -51,7 +51,8 @@ router.post('/', [
                 assignedTo: assignedToName.name,
                 lockedBy: assignedToName.name,
                 assignedToId: profile[0].user,
-                status: "Pending"
+                status: "Active",
+                image: req.body.image
             });
             
             const complaint = await newComplaint.save();

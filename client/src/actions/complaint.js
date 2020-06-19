@@ -16,32 +16,43 @@ export const getComplaints = () => async dispatch => {
             payload: res.data
         });
     } catch (err) {
-        console.log(err)
-        // dispatch({
-        //     type: COMPLAINT_ERROR,
-        //     payload: {msg: err.response.statusText, status: err.response.status }
-        // });
+        // console.log(err)
+        dispatch({
+            type: COMPLAINT_ERROR,
+            payload: {msg: err.response.statusText, status: err.response.status }
+        });
     }
 }
 
 // ADD COMPLAINT
-export const addComplaint = (text, department, issueTitle) => async dispatch => {
+export const addComplaint = (text, department, issueTitle, formFile) => async dispatch => {
 
-    try {
-        // let _id = issueId;
-        // let user = lockedBy;
+    try { 
+        const config = {
+            headers: {
+              'content-type': 'multipart/form-data',
+            },
+          };
 
-          const formData = JSON.stringify({ text, department, issueTitle});
+          let response = await axios.post(
+            '/api/upload',
+            formFile,
+            config,
+          );
+
+          const image = response.data.path;
+
+          const formData = JSON.stringify({ text, department, issueTitle, image});
            
-            console.log(formData)
+            // console.log(formData);
 
-          const config = {
+          const config1 = {
             headers: {
                 'Content-Type': 'application/json'
             }
         }
         
-          const res = await axios.post('/api/complaint', formData, config);
+          const res = await axios.post('/api/complaint', formData, config1);
 
             dispatch({
                 type: ADD_COMPLAINT,
@@ -50,10 +61,10 @@ export const addComplaint = (text, department, issueTitle) => async dispatch => 
 
             dispatch(setAlert('COMPLAINT Created', 'success'));
             } catch (err) {
-                console.log(err);
-            // dispatch({
-            //     type: COMPLAINT_ERROR,
-            //     payload: {msg: err.response.statusText, status: err.response.status }
-            // });
+                // console.log(err);
+            dispatch({
+                type: COMPLAINT_ERROR,
+                payload: {msg: err.response.statusText, status: err.response.status }
+            });
     }
 }

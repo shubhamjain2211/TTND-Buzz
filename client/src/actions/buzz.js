@@ -94,7 +94,7 @@ export const addBuzz = (text,category,formFile) => async dispatch => {
 
           const image = response.data.path;
 
-          console.log('response::image', image);
+        //   console.log('response::image', image);
 
           const formData = {text:text,category:category,image:image};
 
