@@ -1,8 +1,9 @@
 import{
     GET_COMPLAINTS,
     COMPLAINT_ERROR,
-    ADD_COMPLAINT
-} from '../actions\/types';
+    ADD_COMPLAINT,
+    GET_COMPLAINT_BY_ID
+} from '../actions/types';
 
 const initialState = {
     complaints: [],
@@ -19,6 +20,12 @@ export default function( state = initialState, action ) {
             return {
                 ...state,
                 complaints: payload,
+                loading: false
+            };
+        case GET_COMPLAINT_BY_ID:
+            return {
+                ...state,
+                complaint: payload,
                 loading: false
             };
         case ADD_COMPLAINT:{

@@ -5,7 +5,7 @@ import{
     UPDATE_DISLIKES,
     DELETE_BUZZ,
     ADD_BUZZ
-} from '../actions\/types';
+} from '../actions/types';
 
 const initialState = {
     buzzs: [],

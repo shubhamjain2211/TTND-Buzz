@@ -3,7 +3,8 @@ import { setAlert } from './alert';
 import{
     GET_COMPLAINTS,
     COMPLAINT_ERROR,
-    ADD_COMPLAINT
+    ADD_COMPLAINT,
+    GET_COMPLAINT_BY_ID
 } from './types';
 
 // GET COMPLAINTS
@@ -15,6 +16,25 @@ export const getComplaints = () => async dispatch => {
             type: GET_COMPLAINTS,
             payload: res.data
         });
+    } catch (err) {
+        // console.log(err)
+        dispatch({
+            type: COMPLAINT_ERROR,
+            payload: {msg: err.response.statusText, status: err.response.status }
+        });
+    }
+}
+
+// GET COMPLAINT BY ID
+export const getComplaintById = id => async dispatch => {
+    try {
+        const res = await axios.get(`/api/complaint/${id}`);
+
+        dispatch({
+            type: GET_COMPLAINT_BY_ID,
+            payload: res.data
+        });
+
     } catch (err) {
         // console.log(err)
         dispatch({

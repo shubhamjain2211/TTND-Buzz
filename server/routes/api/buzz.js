@@ -31,7 +31,7 @@ router.post('/', [
             
             // Set Default Value for Category
             let category = req.body.category;
-            if(category=='')
+            if(category=='' ||category=='Category')
             category='Activity Buzz';
 
             const newBuzz= new Buzz({

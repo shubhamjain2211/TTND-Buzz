@@ -79,6 +79,32 @@ router.get('/', auth, async (req, res) =>{
     }
 });
 
+//@route   Get api/complaint:id
+//@desc    Get a complaint by Id
+//@access  Private          
+router.get('/:id', auth, async (req, res) =>{
+    try {
+        const complaint = await Complaint.findById(req.params.id);
+        // console.log(req.params.id);
+        if(!complaint) {
+            return res.status(404).json({ msg: 'Complaint not found'} );
+        }
+
+        //Check User
+        if(complaint.user.toString() !== req.user.id){
+            return res.status(401).json({ msg: 'User not authorised' });
+        }
+        res.json(complaint);
+
+    } catch (err) {
+        console.error(err.message);
+        if(err.kind==='ObjectId') {
+            return res.status(404).json({ msg: 'Complaint not found' })
+        }
+        res.status(500).send('Server Error');
+    }
+});
+
 //@route   Delete api/complaint:id
 //@desc    Delete a complaint
 //@access  Private          

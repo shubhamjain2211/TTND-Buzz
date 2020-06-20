@@ -5,7 +5,6 @@ import Spinner from '../layouts/Spinner';
 import { getBuzz } from '../../actions/buzz';
 import './Buzz.css';
 import './SingleBuzz';
-import {Redirect} from 'react-router-dom';
 import SingleBuzz from './SingleBuzz';
 import CreateBuzz from '../createbuzz/Createbuzz';
 

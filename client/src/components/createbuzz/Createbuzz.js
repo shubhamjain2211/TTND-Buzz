@@ -20,6 +20,8 @@ const CreateBuzz = ({ addBuzz }) => {
     let formFile = new FormData();
     formFile.append('file', file);
     addBuzz(text,category,formFile);
+    setFormData({ text:'', category:''});
+    // setFile({ file:null });
   }
 
   const onFileChangeHandler = (e) => {

@@ -21,6 +21,7 @@ const ComplaintBox = ({ addComplaint, auth }) => {
     let formFile = new FormData();
     formFile.append('file', file);
     addComplaint(text, department, issueTitle, formFile);
+    setFormData({text:'', department:'', issueTitle:''});
   }
   const onFileChangeHandler = (e) => {
     setFile(e.target.files[0]);

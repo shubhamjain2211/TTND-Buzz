@@ -12,7 +12,7 @@ const Complaints = ({ getComplaints, complaint: {complaints, loading} }) => {
   useEffect(() => {
     getComplaints();
   }, [getComplaints]);
-
+  
   return (
     loading? <Spinner/> :
     <Fragment>

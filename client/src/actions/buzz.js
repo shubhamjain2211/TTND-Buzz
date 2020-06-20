@@ -70,6 +70,7 @@ export const deleteBuzz = id => async dispatch => {
         });
 
         dispatch(setAlert('Buzz Removed', 'success'));
+        
     } catch (err) {
         dispatch({
             type: BUZZ_ERROR,

@@ -1,4 +1,4 @@
-import React,{Fragment, useEffect} from 'react';
+import React,{Fragment} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import './Complaints.css';
@@ -16,7 +16,7 @@ const SingleComplaint = ( {auth, complaint: { _id, user, text, name,
                         {department}
                     </td>
                     <td>
-                        <Link to="/complaints/issueId">{issueId}</Link>
+                        <Link to={`/complaints/${_id}`}>{issueId}</Link>
                     </td>
                     <td>
                         {assignedTo}

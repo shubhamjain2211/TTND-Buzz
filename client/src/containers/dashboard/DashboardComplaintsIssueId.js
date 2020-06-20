@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 import { getCurrentProfile } from '../../actions/profile';
 import Spinner from '../../components/layouts/Spinner';
 import CreateProfile from '../../components/create-profile/create-profile';
-import Complaints from '../../components/complaints/Complaints';
+import ComplaintbyId from '../../components/complaintbyId/ComplaintbyId';
 
 const Dashboard = ({ getCurrentProfile, auth, profile:{profile,loading} })   => {
 
@@ -38,7 +38,7 @@ const Dashboard = ({ getCurrentProfile, auth, profile:{profile,loading} })   => 
             {profile.status=='Admin'?<MenuAdmin/>:<Menu/>}
           </div>
           <div className="DashboardArea">
-            
+            <ComplaintbyId/>
           </div>
         </div>
       </Fragment> : 
