@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { addComplaint } from '../../actions/complaint'; 
 
 const ComplaintBox = ({ addComplaint, auth }) => {
-  const [file, setFile] = useState(null);
+  const [file, setFile] = useState('');
   const [formData, setFormData] = useState({
      text:'', department:'', issueTitle:''
   });
@@ -22,6 +22,7 @@ const ComplaintBox = ({ addComplaint, auth }) => {
     formFile.append('file', file);
     addComplaint(text, department, issueTitle, formFile);
     setFormData({text:'', department:'', issueTitle:''});
+    setFile('');
   }
   const onFileChangeHandler = (e) => {
     setFile(e.target.files[0]);
@@ -72,7 +73,14 @@ const ComplaintBox = ({ addComplaint, auth }) => {
           </div>
 
           <div className='SubmitButtonDiv'>
-            <div><input className='attachment' type="file" name="file" onChange={()=>{onFileChangeHandler(window.event)}}></input></div>
+            <div>
+              {/* <input className='attachment' type="file" name="file" 
+              onChange={()=>{onFileChangeHandler(window.event)}}></input> */}
+              <input type="file" name="file" id="file" 
+              className="attachment" data-multiple-caption="{count} files selected" 
+              onChange={()=>{onFileChangeHandler(window.event)}}/>
+              <label for="file"><i className="fas fa-images"></i> Image</label>
+            </div>
             <div><button type='submit'>Submit</button></div>
           </div>
 

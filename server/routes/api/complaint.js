@@ -40,7 +40,7 @@ router.post('/', [
 
             const user = await User.findById(req.user.id).select('-password');
             const assignedToName = await User.findById(profile[0].user).select('name');
-
+            // console.log(req.body.image);
             const newComplaint= new Complaint({
                 user: req.user.id,
                 text: req.body.text,

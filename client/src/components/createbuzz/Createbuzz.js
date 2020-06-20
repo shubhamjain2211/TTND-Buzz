@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { addBuzz } from '../../actions/buzz'; 
 
 const CreateBuzz = ({ addBuzz }) => {
-  const [file, setFile] = useState(null);
+  const [file, setFile] = useState('');
   const [formData , setFormData] = useState({
     text:'',
     category:'',
@@ -21,7 +21,7 @@ const CreateBuzz = ({ addBuzz }) => {
     formFile.append('file', file);
     addBuzz(text,category,formFile);
     setFormData({ text:'', category:''});
-    // setFile({ file:null });
+    setFile('');
   }
 
   const onFileChangeHandler = (e) => {
@@ -42,7 +42,10 @@ const CreateBuzz = ({ addBuzz }) => {
             <option>Activity Buzz</option>
             <option>Lost and Found Buzz</option>
           </select>
-          <input className='attachment' type="file" name="file" onChange={()=>{onFileChangeHandler(window.event)}}></input>
+           <input type="file" name="file" id="file" 
+              className="attachment" data-multiple-caption="{count} files selected" 
+              onChange={()=>{onFileChangeHandler(window.event)}}/>
+           <label for="file"><i className="fas fa-images"></i> Image</label>
           </span>
           <button><i className="fas fa-chevron-circle-right"></i></button>
         </div>
