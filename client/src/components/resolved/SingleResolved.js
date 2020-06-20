@@ -1,14 +1,13 @@
 import React,{Fragment, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import './Resolved.css';
 
 const SingleComplaint = ( {auth, complaint: { _id, user, text, name, 
     department, issueTitle, issueId, lockedBy, assignedTo, status, date }}) =>{
     return(
     <Fragment>
         <div className='SingleComplaint'>
-            <table className='ComplaintTable'>
+            <table className='ComplaintTable ResolvedTable'>
                 <tbody>
                 <tr>
                     <td>{department}</td>

@@ -15,7 +15,7 @@
     background-color: #ffffff;
     color: #b3aeae;
     border-radius: 0.2rem;
-    padding: 1rem;
+    padding: 0.5rem;
     margin-bottom: 1rem;
     text-align: center;
     display: flex;
@@ -48,6 +48,10 @@
     position: relative;
 }
 
+.ProfilePicDiv:hover{
+    cursor: pointer;
+}
+
 .ProfilePicDiv .texttooltip {
     visibility: hidden;
     width: fit-content;
@@ -65,7 +69,6 @@
   } 
 
 .BuzzContent{
-    padding: 1rem;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -74,12 +77,15 @@
 
 .BuzzContent .text{
     color: rgb(39, 38, 38);
-
+    margin: 0;
 }
-
 
 .imageBuzz{
     width: 50vh;
+}
+
+.imageBuzz:hover{
+    width: 50.3vh;
 }
 
 .StatusBar{

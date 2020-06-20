@@ -16,8 +16,6 @@ const ComplaintBox = ({ addComplaint, auth }) => {
 
   const onSubmit = async e =>{
     e.preventDefault();
-    // console.log("Complaint Box FormData" , formData)
-    // console.log(text, department, issueTitle);
     let formFile = new FormData();
     formFile.append('file', file);
     addComplaint(text, department, issueTitle, formFile);
@@ -37,11 +35,11 @@ const ComplaintBox = ({ addComplaint, auth }) => {
           
           <div className="ComplaintBoxDivSmall">
             
-            <div><label>Your Name:</label>
+            <div className="ComplaintBoxUserInfo"><label>Your Name:</label>
             <strong><label className='Name_Email'>{auth.user.name}</label></strong>
             </div>
 
-            <div><label>Email Id:</label>
+            <div className="ComplaintBoxUserInfo"><label>Email Id:</label>
             <strong><label className='Name_Email'>{auth.user.email}</label></strong>
             </div>
             
@@ -74,8 +72,6 @@ const ComplaintBox = ({ addComplaint, auth }) => {
 
           <div className='SubmitButtonDiv'>
             <div>
-              {/* <input className='attachment' type="file" name="file" 
-              onChange={()=>{onFileChangeHandler(window.event)}}></input> */}
               <input type="file" name="file" id="file" 
               className="attachment" data-multiple-caption="{count} files selected" 
               onChange={()=>{onFileChangeHandler(window.event)}}/>

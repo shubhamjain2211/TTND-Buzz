@@ -1,5 +1,4 @@
 import React,{Fragment,useEffect} from 'react';
-import './Resolved';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Spinner from '../layouts/Spinner';
@@ -17,7 +16,7 @@ const Complaints = ({ getComplaints, complaint: {complaints, loading} }) => {
     <Fragment>
       <div className='YourComplaints'>Your Complaints</div>
       <div>
-      <table className='ComplaintTable'>
+      <table className='ComplaintTable ResolvedTable'>
                 <thead>
                 <tr>
                     <td>Department</td>

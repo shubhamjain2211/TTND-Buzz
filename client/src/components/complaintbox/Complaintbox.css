@@ -14,11 +14,12 @@
     background-color: #ffffff;
     color: #b3aeae;
     border-radius: 0.2rem;
+    margin-bottom: 2%;
 }
 .ComplaintBoxDivSmall div{
     display: flex;    
     flex-direction: column;
-    margin: 1%;
+    margin-top: 0.5%;
     width: 48%;
     text-align: center;
 }
@@ -27,6 +28,10 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.ComplaintBoxUserInfo label{
+    padding: 0px;
+} 
 
 .Complaintbox input,select{
     padding: 0.5rem;
