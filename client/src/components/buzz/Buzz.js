@@ -18,7 +18,7 @@ const Buzz = ({ getBuzz, buzz: {buzzs, loading} }) => {
     loading? <Spinner/> :
     <Fragment>
       <CreateBuzz />
-      <div className='RecentBuzz'>@ Recent Buzz</div>
+      <div className='RecentBuzz'><i className="fas fa-bullhorn"></i> Recent Buzz</div>
       <div>
         {buzzs.map(buzz =>(
           <SingleBuzz key={buzz._id} buzz={buzz} />

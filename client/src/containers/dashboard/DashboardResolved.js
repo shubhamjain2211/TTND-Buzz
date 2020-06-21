@@ -4,16 +4,12 @@ import Logout from '../../components/logout/Logout';
 import Banner from '../../components/banner/Banner';
 import Menu from '../../components/menu/Menu';
 import MenuAdmin from '../../components/menu/MenuAdmin';
-import Complaintbox from '../../components/complaintbox/Complaintbox';
-import CreateBuzz from '../../components/createbuzz/Createbuzz';
 import { connect } from 'react-redux';
-import {Link,Redirect} from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { getCurrentProfile } from '../../actions/profile';
 import Spinner from '../../components/layouts/Spinner';
 import CreateProfile from '../../components/create-profile/create-profile';
-import Buzz from '../../components/buzz/Buzz';
-import Complaints from '../../components/complaints/Complaints';
 import Resolved from '../../components/resolved/Resolved';
 
 const Dashboard = ({ getCurrentProfile, auth, profile:{profile,loading} })   => {

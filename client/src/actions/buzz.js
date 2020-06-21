@@ -63,7 +63,6 @@ export const addDislike = id => async dispatch => {
 export const deleteBuzz = id => async dispatch => {
     try {
         const res = await axios.delete(`/api/buzz/${id}`);
-
         dispatch({
             type: DELETE_BUZZ,
             payload: id

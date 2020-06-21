@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import './Complaints.css';
 import { Link } from 'react-router-dom';
 
-const SingleComplaint = ( {auth, complaint: { _id, user, text, name, 
+const SingleComplaint = ( {auth, complaint: { _id, user, text, name, email, 
     department, issueTitle, issueId, lockedBy, assignedTo, status, date }}) =>{
     return(
     <Fragment>

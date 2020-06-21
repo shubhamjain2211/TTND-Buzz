@@ -28,7 +28,7 @@ const ComplaintBox = ({ addComplaint, auth }) => {
 
   return (
     <Fragment>
-    <div className="ComplaintBoxHeading">Complaint Box</div>
+    <div className="ComplaintBoxHeading"><i className="far fa-sticky-note"></i> Complaint Box</div>
       <div className="Complaintbox">
         
         <form onSubmit={e => onSubmit(e)}>

@@ -5,7 +5,7 @@ import Banner from '../../components/banner/Banner';
 import Menu from '../../components/menu/Menu';
 import MenuAdmin from '../../components/menu/MenuAdmin';
 import { connect } from 'react-redux';
-import {Link,Redirect} from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { getCurrentProfile } from '../../actions/profile';
 import Spinner from '../../components/layouts/Spinner';

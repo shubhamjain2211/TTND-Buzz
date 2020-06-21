@@ -17,7 +17,7 @@ const Complaints = ({ getComplaints, complaint: {complaints, loading} }) => {
     loading? <Spinner/> :
     <Fragment>
       <ComplaintBox />
-      <div className='YourComplaints'>Your Complaints</div>
+      <div className='YourComplaints'><i className="far fa-clipboard"></i> Your Complaints</div>
       <div className='SingleComplaint'>
             <table className='ComplaintTable'>
                 <thead>

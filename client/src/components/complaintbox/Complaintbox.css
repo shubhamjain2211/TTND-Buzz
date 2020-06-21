@@ -46,6 +46,7 @@
     border: 1px solid #dfdfdf;
     border-radius: 0.2rem;
     width: 96%;
+    resize: none;
 }
 
 .Name_Email{

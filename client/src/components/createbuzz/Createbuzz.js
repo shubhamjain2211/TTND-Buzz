@@ -33,7 +33,8 @@ const CreateBuzz = ({ addBuzz }) => {
       <div className="heading"><span><i className="fas fa-pen"></i>  Create Buzz</span></div>
         <form onSubmit={e => onSubmit(e)}>
         <div>
-          <textarea value={text} name='text' onChange={e =>onChange(e)} placeholder="Share your thought..."></textarea>
+          <textarea value={text} name='text' onChange={e =>onChange(e)} 
+          placeholder="Share your thought..." required></textarea>
         </div>
         <div className="CreatebuzzSubmit">
           <span>
@@ -45,7 +46,7 @@ const CreateBuzz = ({ addBuzz }) => {
            <input type="file" name="file" id="file" 
               className="attachment" data-multiple-caption="{count} files selected" 
               onChange={()=>{onFileChangeHandler(window.event)}}/>
-           <label for="file"><i className="fas fa-images"></i> Image</label>
+           <label htmlFor="file"><i className="fas fa-images"></i> Image</label>
           </span>
           <button><i className="fas fa-chevron-circle-right"></i></button>
         </div>

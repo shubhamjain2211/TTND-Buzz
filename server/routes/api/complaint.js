@@ -66,11 +66,13 @@ router.post('/', [
 });
 
 //@route   Get api/complaint
-//@desc    Get all Complaint
+//@desc    Get all Complaint of a user
 //@access  Private          
 router.get('/', auth, async (req, res) =>{
     try {
-        const complaint = await Complaint.find().sort({ date: -1 });
+        const complaint = await Complaint.find({
+            'user' :req.user.id})
+            .sort({ date: -1 });
         res.json(complaint);
 
     } catch (err) {
@@ -78,6 +80,21 @@ router.get('/', auth, async (req, res) =>{
         res.status(500).send('Server Error');
     }
 });
+
+
+// //@route   Get api/complaint
+// //@desc    Get all Complaint
+// //@access  Private          
+// router.get('/', auth, async (req, res) =>{
+//     try {
+//         const complaint = await Complaint.find().sort({ date: -1 });
+//         res.json(complaint);
+
+//     } catch (err) {
+//         console.error(err.message);
+//         res.status(500).send('Server Error');
+//     }
+// });
 
 //@route   Get api/complaint:id
 //@desc    Get a complaint by Id
