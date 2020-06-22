@@ -9,6 +9,7 @@ import Dashboard from './containers/dashboard/Dashboard';
 import DashboardProfile from './containers/dashboard/DashboardProfile';
 import DashboardComplaints from './containers/dashboard/DashboardComplaints';
 import DashboardComplaintsIssueId from './containers/dashboard/DashboardComplaintsIssueId';
+import DashboardResolvedIssueId from './containers/dashboard/DashboardResolvedIssueId';
 import DashboardResolved from './containers/dashboard/DashboardResolved';
 
 //Redux
@@ -35,6 +36,7 @@ const App = () => {
         <Route exact path='/profile' component={DashboardProfile} />
         <Route exact path='/complaints' component={DashboardComplaints} />
         <Route exact path='/complaints/:id' component={DashboardComplaintsIssueId} />
+        <Route exact path='/resolved/:id' component={DashboardResolvedIssueId} />
         <Route exact path='/resolved' component={DashboardResolved} />
         <Alert />
         <Switch>
