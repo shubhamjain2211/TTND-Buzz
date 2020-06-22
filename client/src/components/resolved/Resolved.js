@@ -2,14 +2,14 @@ import React,{Fragment,useEffect} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Spinner from '../layouts/Spinner';
-import { getComplaints } from '../../actions/complaint';
+import { getComplaintsAdmin } from '../../actions/complaint';
 import SingleResolved from './SingleResolved';
 
-const Complaints = ({ getComplaints, complaint: {complaints, loading} }) => {
+const Complaints = ({ getComplaintsAdmin, complaint: {complaints, loading} }) => {
   
   useEffect(() => {
-    getComplaints();
-  }, [getComplaints]);
+    getComplaintsAdmin();
+  }, [getComplaintsAdmin]);
 
   return (
     loading? <Spinner/> :
@@ -36,7 +36,7 @@ const Complaints = ({ getComplaints, complaint: {complaints, loading} }) => {
 }
 
 Complaints.propTypes = {
-  getComplaints: PropTypes.func.isRequired,
+  getComplaintsAdmin: PropTypes.func.isRequired,
   complaint: PropTypes.object.isRequired
 }
 
@@ -44,4 +44,4 @@ const mapStateToProps = state =>({
   complaint: state.complaint,
 });
 
-export default connect( mapStateToProps, { getComplaints } )(Complaints);
+export default connect( mapStateToProps, { getComplaintsAdmin } )(Complaints);

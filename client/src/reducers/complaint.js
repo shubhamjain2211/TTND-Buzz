@@ -1,5 +1,6 @@
 import{
     GET_COMPLAINTS,
+    GET_COMPLAINTS_ADMIN,
     COMPLAINT_ERROR,
     ADD_COMPLAINT,
     GET_COMPLAINT_BY_ID
@@ -17,6 +18,12 @@ export default function( state = initialState, action ) {
 
     switch(type){
         case GET_COMPLAINTS:
+            return {
+                ...state,
+                complaints: payload,
+                loading: false
+            };
+        case GET_COMPLAINTS_ADMIN:
             return {
                 ...state,
                 complaints: payload,

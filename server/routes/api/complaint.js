@@ -81,9 +81,25 @@ router.get('/', auth, async (req, res) =>{
     }
 });
 
+//@route   Get api/complaint/admin
+//@desc    Get all Complaint of an Admin
+//@access  Private          
+router.get('/admin', auth, async (req, res) =>{
+    try {
+        const complaint = await Complaint.find({
+            'assignedToId' :req.user.id})
+            .sort({ date: -1 });
+        res.json(complaint);
+
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server Error');
+    }
+});
+
 
 // //@route   Get api/complaint
-// //@desc    Get all Complaint
+// //@desc    Get all Complaints
 // //@access  Private          
 // router.get('/', auth, async (req, res) =>{
 //     try {
