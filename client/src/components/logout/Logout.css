@@ -28,3 +28,12 @@ a:hover{
     color: rgb(243, 107, 57);
     cursor: pointer;
 }
+
+@media (max-width:500px){
+    .logout{
+        padding: 0 2rem;
+    }
+    .logo{
+        height: 150%;
+    }
+}

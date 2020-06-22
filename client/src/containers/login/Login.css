@@ -32,13 +32,6 @@
     filter:drop-shadow(8px 8px 10px grey);
 }
 
-.google{
-    width: 60%;
-}
-.google:hover{
-    width: 61%;
-    cursor: pointer;
-}
 
 .logintext {
     position: relative;
@@ -63,3 +56,9 @@
   .logintext:hover .logintexttooltip {
     visibility: visible;
   } 
+
+@media (max-width:600px){
+  .login-div img{
+    width: 50%;
+  }
+}

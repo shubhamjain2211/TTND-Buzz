@@ -20,3 +20,52 @@ h1{
 h1:hover{
     filter:drop-shadow(1px 1px 3px white);
 }
+
+@media (max-width:1000px) {
+    h1{
+        top:10;
+        font-size: 2rem;
+    }
+}
+@media (max-width:800px) {
+    .banner{
+        width: 110%;
+    }
+    h1{
+        top: 6;
+        font-size: 1.5rem;
+    }
+    .line2{
+        padding: 0 0 2rem 2rem;
+    }
+}
+@media (max-width:600px) {
+    .banner{
+        width: 120%;
+    }
+    h1{
+        top: 2;
+        font-size: 1rem;
+    }
+}
+@media (max-width:500px) {
+    .banner{
+        width: 140%;
+    }
+}
+@media (max-width:400px) {
+    .banner{
+        width: 150%;
+    }
+    .line1{
+        padding: 2rem 0 0 2rem;
+    }
+}
+@media (max-width:300px) {
+    h1{
+        font-size: 0.5rem;
+    }
+    .line1{
+        padding: 2rem 0 0 2rem;
+    }
+}

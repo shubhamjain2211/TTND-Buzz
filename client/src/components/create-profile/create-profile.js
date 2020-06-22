@@ -21,6 +21,8 @@ const CreateProfile = ({ createProfile }) =>{
     const onSubmit = e =>{
         e.preventDefault();
         createProfile(formData);
+        setFormData({ status:'', department:''});
+
     };
 
     return(
