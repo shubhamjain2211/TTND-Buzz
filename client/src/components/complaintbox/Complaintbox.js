@@ -45,7 +45,7 @@ const ComplaintBox = ({ addComplaint, auth }) => {
             
             <div>
               <label>Select Department</label>
-              <select value={department} name='department' onChange={e =>onChange(e)}>
+              <select value={department} name='department' onChange={e =>onChange(e)} required>
                 <option></option>
                 <option>Admin</option>
                 <option>Infra</option>
@@ -56,7 +56,7 @@ const ComplaintBox = ({ addComplaint, auth }) => {
 
           <div>
             <label>Issue Title</label>
-            <select value={issueTitle} name='issueTitle' onChange={e =>onChange(e)}>
+            <select value={issueTitle} name='issueTitle' onChange={e =>onChange(e)} required>
               <option></option>
               <option>Hardware</option>
               <option>Infrastructure</option>
@@ -67,7 +67,7 @@ const ComplaintBox = ({ addComplaint, auth }) => {
         </div>
 
           <div>
-            <textarea value={text} name='text' placeholder="Your Concern" onChange={e =>onChange(e)}></textarea>
+            <textarea value={text} name='text'  required placeholder="Your Concern" onChange={e =>onChange(e)}></textarea>
           </div>
 
           <div className='SubmitButtonDiv'>

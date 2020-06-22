@@ -36,6 +36,7 @@ const SingleBuzz = ( {addLike, addDislike, deleteBuzz, auth,
                     {/* <Moment format='DD.MM.YY'>{date}</Moment> */}
                     <Moment toNow>{date}</Moment>
                 </div>
+                {!auth.loading && user !== auth.user._id && (
                 <div>
                     <button onClick={ e => addLike(_id) } type='button'>
                         {likes.length}&nbsp;
@@ -47,8 +48,8 @@ const SingleBuzz = ( {addLike, addDislike, deleteBuzz, auth,
                         </i>
                     </button>
                 </div>
+                    )}
             </div>
-
         </div>
     )
 };

@@ -98,7 +98,7 @@ export const addComplaint = (text, department, issueTitle, formFile) => async di
                 payload: res.data
             });
 
-            dispatch(setAlert('COMPLAINT Created', 'success'));
+            dispatch(setAlert('Complaint Created', 'success'));
             } catch (err) {
                 // console.log(err);
             dispatch({

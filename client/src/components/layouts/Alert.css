@@ -1,0 +1,29 @@
+.alertBox{
+    width: 50%;
+    margin: auto;
+}
+
+.alert{
+    position: fixed;
+    top:0;
+    padding: 1rem;
+    background-color: rgb(243, 107, 57);
+    font-weight: 800;
+    color: white;
+    font-size: 1.8rem;
+    text-align: center;
+    z-index: 10;
+    width: 50%;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    opacity: 0.8;
+}
+
+.danger{
+    background-color: red;
+    text-align: center;
+}
+.success{
+    background-color: green;
+    text-align: center;
+}

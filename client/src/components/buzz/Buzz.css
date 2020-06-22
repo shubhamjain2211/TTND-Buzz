@@ -85,7 +85,7 @@
 }
 
 .imageBuzz:hover{
-    width: 50.3vh;
+    opacity: 0.5;
 }
 
 .StatusBar{

@@ -34,7 +34,7 @@ const CreateBuzz = ({ addBuzz }) => {
         <form onSubmit={e => onSubmit(e)}>
         <div>
           <textarea value={text} name='text' onChange={e =>onChange(e)} 
-          placeholder="Share your thought..." required></textarea>
+          placeholder="Share your thought..."></textarea>
         </div>
         <div className="CreatebuzzSubmit">
           <span>

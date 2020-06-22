@@ -27,11 +27,14 @@
     font-weight: 800;
 }
 .open{
-    color: rgb(247, 33, 33);
+    font-weight: 800;
+    color: rgb(255, 0, 0);
 }
 .prog{
+    font-weight: 800;
     color: rgb(44, 11, 192);
 }
 .resolved{
+    font-weight: 800;
     color: rgb(5, 148, 5);
 }
