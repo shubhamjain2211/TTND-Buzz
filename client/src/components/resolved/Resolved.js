@@ -14,7 +14,7 @@ const Complaints = ({ getComplaintsAdmin, complaint: {complaints, loading} }) =>
   return (
     loading? <Spinner/> :
     <Fragment>
-      <div className='YourComplaints'>Your Complaints</div>
+      <div className='YourComplaints'><i className="far fa-calendar-check"></i> Your Complaints</div>
       <div>
       <table className='ComplaintTable ResolvedTable'>
                 <thead>

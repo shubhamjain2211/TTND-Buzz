@@ -6,6 +6,7 @@ import LoginForm from './containers/login/forms/Loginform';
 import RegisterForm from './containers/login/forms/Registerform';
 import Alert from './components/layouts/Alert';
 import Dashboard from './containers/dashboard/Dashboard';
+import DashboardProfile from './containers/dashboard/DashboardProfile';
 import DashboardComplaints from './containers/dashboard/DashboardComplaints';
 import DashboardComplaintsIssueId from './containers/dashboard/DashboardComplaintsIssueId';
 import DashboardResolved from './containers/dashboard/DashboardResolved';
@@ -31,6 +32,7 @@ const App = () => {
       <Fragment>
         <Route exact path='/' component={Login} />
         <Route exact path='/dashboard' component={Dashboard} />
+        <Route exact path='/profile' component={DashboardProfile} />
         <Route exact path='/complaints' component={DashboardComplaints} />
         <Route exact path='/complaints/:id' component={DashboardComplaintsIssueId} />
         <Route exact path='/resolved' component={DashboardResolved} />

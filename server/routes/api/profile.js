@@ -80,6 +80,7 @@ router.post('/', [auth,[
         res.status(500).send('Server Error');
     }
     });
+    
 //@route  GET api/profile
 //@desc   Get all Profiles
 //@access Public

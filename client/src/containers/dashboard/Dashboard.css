@@ -49,6 +49,17 @@
     filter: drop-shadow(2px 2px 2px #cfc8c8);
     border-radius: 0.2rem;
 }
+
+.DashboardEditProfile{
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid #dfdfdf;  
+    background-color: #ffffff;
+    color: rgb(70, 69, 69);
+    border-radius: 0.2rem;
+}
+
 .CreateProfile{
     padding: 0.8rem;
     color: rgb(236, 83, 27);
