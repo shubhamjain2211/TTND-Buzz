@@ -6,6 +6,12 @@ import { Link } from 'react-router-dom';
 
 const SingleComplaint = ( {auth, complaint: { _id, user, text, name, email, 
     department, issueTitle, issueId, lockedBy, assignedTo, status, date }}) =>{
+        let statusClass = 'open';
+        if(status=='In-Progress')
+            statusClass = 'prog';
+        else if(status=='Resolved')
+            statusClass = 'resolved';
+
     return(
     <Fragment>
         <div className='SingleComplaint'>
@@ -22,7 +28,7 @@ const SingleComplaint = ( {auth, complaint: { _id, user, text, name, email,
                         {assignedTo}
                     </td>
                     <td>
-                        {status}
+                        <span className={statusClass}>{status}</span>
                     </td>
                 </tr>
                 </tbody>

@@ -26,3 +26,12 @@
 .ComplaintTable thead{
     font-weight: 800;
 }
+.open{
+    color: rgb(247, 33, 33);
+}
+.prog{
+    color: rgb(44, 11, 192);
+}
+.resolved{
+    color: rgb(5, 148, 5);
+}

@@ -4,6 +4,11 @@ import { connect } from 'react-redux';
 
 const SingleComplaint = ( {auth, complaint: { _id, user, text, name, 
     department, issueTitle, issueId, lockedBy, assignedTo, status, date }}) =>{
+        let statusClass = 'open';
+        if(status=='In-Progress')
+            statusClass = 'prog';
+        else if(status=='Resolved')
+            statusClass = 'resolved';
     return(
     <Fragment>
         <div className='SingleComplaint'>
@@ -14,7 +19,9 @@ const SingleComplaint = ( {auth, complaint: { _id, user, text, name,
                     <td>{issueId}</td>
                     <td>{lockedBy}</td>
                     <td>{assignedTo}</td>
-                    <td>{status}</td>
+                    <td>
+                        <span className={statusClass}>{status}</span>
+                    </td>
                 </tr>
                 </tbody>
                 <tfoot></tfoot>

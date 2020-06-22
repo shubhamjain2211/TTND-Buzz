@@ -51,7 +51,7 @@ router.post('/', [
                 assignedTo: assignedToName.name,
                 lockedBy: assignedToName.name,
                 assignedToId: profile[0].user,
-                status: "Active",
+                status: "Open",
                 image: req.body.image
             });
             
