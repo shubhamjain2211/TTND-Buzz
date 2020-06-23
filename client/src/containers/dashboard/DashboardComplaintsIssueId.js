@@ -10,7 +10,6 @@ import PropTypes from 'prop-types';
 import { getCurrentProfile } from '../../actions/profile';
 import Spinner from '../../components/layouts/Spinner';
 import CreateProfile from '../../components/create-profile/create-profile';
-import Buzz from '../../components/buzz/Buzz';
 
 const Dashboard = ({ getCurrentProfile, auth, profile:{profile,loading} })   => {
 

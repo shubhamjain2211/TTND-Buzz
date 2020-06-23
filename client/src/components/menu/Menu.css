@@ -28,3 +28,20 @@
     font-size: 0.9rem;
     font-weight: 400;
 }
+
+@media (max-width:700px){
+    .MenuHolder{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .Menu{
+        padding: 0.5rem;
+        font-weight: 600;
+    }
+    .MenuFooter{
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0;
+    }
+}

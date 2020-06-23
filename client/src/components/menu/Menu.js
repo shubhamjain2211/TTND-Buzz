@@ -14,13 +14,12 @@ function Menu() {
 
       <Link to='/complaints'><div className="Menu"><span><i className="far fa-clipboard"></i>
       &nbsp;&nbsp;Complaints</span><i className="fas fa-caret-right"></i></div></Link>
-
-
+    </div>
+      
       <div className="MenuFooter"><i className="far fa-copyright"></i>
       2020 To The New Digital <a target="_blank" rel="noopener noreferrer" 
       href="https://www.tothenew.com/about-us">About</a> <a target="_blank" 
       rel="noopener noreferrer" href="https://www.tothenew.com/contact-us">Help</a></div>
-    </div>
     </Fragment>
   );
 }
