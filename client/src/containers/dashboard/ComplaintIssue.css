@@ -1,0 +1,49 @@
+.ComplaintHolderId{
+    width: 80%;
+    border: 1px solid #dfdfdf;
+    background-color: #ffffff;
+    color: #b3aeae;
+    border-radius: 0.2rem;
+    padding: 1rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.ComplaintHolderId div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.ComplaintHolderId div span{
+    width: 50%;
+}
+
+.ComplaintHolderId div span label{
+    font-size: 1.2rem;
+    font-weight: 800;
+    padding: 0.5rem;
+}
+
+.Concern{
+    padding: 0.5rem;
+}
+
+.imageComplaint{
+    margin: 1rem;
+    width: 40vh;
+}
+
+@media(max-width:700px){
+    .ComplaintHolderId div{
+        flex-direction: column;
+    }
+    .ComplaintHolderId div span{
+        width: 100%;
+    }
+    .imageComplaint{
+        margin: 2rem;
+        width: 80vh;
+    }
+}

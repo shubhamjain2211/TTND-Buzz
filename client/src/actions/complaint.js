@@ -53,7 +53,7 @@ export const getComplaintById = id => async dispatch => {
             type: GET_COMPLAINT_BY_ID,
             payload: res.data
         });
-
+        
     } catch (err) {
         // console.log(err)
         dispatch({
