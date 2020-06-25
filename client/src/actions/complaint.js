@@ -100,6 +100,60 @@ export const getComplaintsAdmin = () => async dispatch => {
     }
 }
 
+// GET COMPLAINTS FOR ADMIN "Open"
+export const getOpenAdmin = () => async dispatch => {
+    try {
+        const res = await axios.get('/api/complaint/admin/open');
+
+        dispatch({
+            type: GET_COMPLAINTS_ADMIN,
+            payload: res.data
+        });
+    } catch (err) {
+        // console.log(err)
+        dispatch({
+            type: COMPLAINT_ERROR,
+            payload: {msg: err.response.statusText, status: err.response.status }
+        });
+    }
+}
+
+// GET COMPLAINTS FOR ADMIN "Progress"
+export const getProgressAdmin = () => async dispatch => {
+    try {
+        const res = await axios.get('/api/complaint/admin/progress');
+
+        dispatch({
+            type: GET_COMPLAINTS_ADMIN,
+            payload: res.data
+        });
+    } catch (err) {
+        // console.log(err)
+        dispatch({
+            type: COMPLAINT_ERROR,
+            payload: {msg: err.response.statusText, status: err.response.status }
+        });
+    }
+}
+
+// GET COMPLAINTS FOR ADMIN "Resolved"
+export const getResolvedAdmin = () => async dispatch => {
+    try {
+        const res = await axios.get('/api/complaint/admin/resolved');
+
+        dispatch({
+            type: GET_COMPLAINTS_ADMIN,
+            payload: res.data
+        });
+    } catch (err) {
+        // console.log(err)
+        dispatch({
+            type: COMPLAINT_ERROR,
+            payload: {msg: err.response.statusText, status: err.response.status }
+        });
+    }
+}
+
 // GET COMPLAINT BY ID
 export const getComplaintById = id => async dispatch => {
     try {

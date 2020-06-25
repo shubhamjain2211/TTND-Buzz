@@ -148,6 +148,58 @@ router.get('/admin', auth, async (req, res) =>{
     }
 });
 
+//@route   Get api/complaint/admin/open
+//@desc    Get open Complaint of an Admin
+//@access  Private          
+router.get('/admin/open', auth, async (req, res) =>{
+    try {
+        const complaint = await Complaint.find({
+            'assignedToId' :req.user.id})
+            .where({ status: 'Open' })
+            .sort({ date: -1 });
+        res.json(complaint);
+
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server Error');
+    }
+});
+
+//@route   Get api/complaint/admin/progress
+//@desc    Get progress Complaint of an Admin
+//@access  Private          
+router.get('/admin/progress', auth, async (req, res) =>{
+    try {
+        const complaint = await Complaint.find({
+            'assignedToId' :req.user.id})
+            .where({ status: 'In-Progress' })
+            .sort({ date: -1 });
+        res.json(complaint);
+
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server Error');
+    }
+});
+
+//@route   Get api/complaint/admin/resolved
+//@desc    Get resolved Complaint of an Admin
+//@access  Private          
+router.get('/admin/resolved', auth, async (req, res) =>{
+    try {
+        const complaint = await Complaint.find({
+            'assignedToId' :req.user.id})
+            .where({ status: 'Resolved' })
+            .sort({ date: -1 });
+        res.json(complaint);
+
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server Error');
+    }
+});
+
+
 //@route   Get api/complaint:id
 //@desc    Get a complaint by Id
 //@access  Private          
