@@ -1,10 +1,10 @@
 const express = require('express');
-const Router = express.Router();
+const uploadRouter = express.Router();
 const upload = require('../../utils/upload').single('file');
 const multer = require('multer');
 
 
-Router.post('/', (req, res) => {
+uploadRouter.post('/', (req, res) => {
   upload(req, res, function (err) {
     if (err instanceof multer.MulterError) {
       res.send('Please enter the mentioned size image');

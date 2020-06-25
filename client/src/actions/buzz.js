@@ -26,6 +26,40 @@ export const getBuzz = () => async dispatch => {
     }
 }
 
+// GET Acitivity BUZZ
+export const getActivityBuzz = () => async dispatch => {
+    try {
+        const res = await axios.get('/api/buzz/activity');
+
+        dispatch({
+            type: GET_BUZZS,
+            payload: res.data
+        });
+    } catch (err) {
+        dispatch({
+            type: BUZZ_ERROR,
+            payload: {msg: err.response.statusText, status: err.response.status }
+        });
+    }
+}
+
+// GET Lost and Found BUZZ
+export const getLAFBuzz = () => async dispatch => {
+    try {
+        const res = await axios.get('/api/buzz/lostandfound');
+
+        dispatch({
+            type: GET_BUZZS,
+            payload: res.data
+        });
+    } catch (err) {
+        dispatch({
+            type: BUZZ_ERROR,
+            payload: {msg: err.response.statusText, status: err.response.status }
+        });
+    }
+}
+
 // ADD LIKE
 export const addLike = id => async dispatch => {
     try {

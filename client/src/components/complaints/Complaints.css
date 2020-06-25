@@ -1,11 +1,14 @@
 .YourComplaints{
     font-weight: 800;
     border: 1px solid  #dfdfdf;
-    background-color: rgb(214, 212, 212);
+    background-color: #dfdfdf;
     padding: 0.5rem 1rem;
     width: 100%;
     color: black;
     border-radius: 0.2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 .ComplaintTable{
     width: 100%;

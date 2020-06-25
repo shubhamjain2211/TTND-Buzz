@@ -68,6 +68,34 @@ router.get('/', auth, async (req, res) =>{
     }
 });
 
+//@route   Get api/buzz/ActivityBuzz
+//@desc    Get all Activity Buzz
+//@access  Private          
+router.get('/activity', auth, async (req, res) =>{
+    try {
+        const buzz = await Buzz.find().where({ category:'Activity Buzz' }).sort({ date: -1 });
+        res.json(buzz);
+
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server Error');
+    }
+});
+
+//@route   Get api/buzz/LostandFoundBuzz
+//@desc    Get all Lost and Found Buzz
+//@access  Private          
+router.get('/lostandfound', auth, async (req, res) =>{
+    try {
+        const buzz = await Buzz.find().where({ category:'Lost and Found Buzz' }).sort({ date: -1 });
+        res.json(buzz);
+
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server Error');
+    }
+});
+
 //@route   Delete api/buzz:id
 //@desc    Delete a buzz
 //@access  Private          

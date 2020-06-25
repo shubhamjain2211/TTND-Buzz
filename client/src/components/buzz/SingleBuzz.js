@@ -5,7 +5,7 @@ import Moment from 'react-moment';
 import './Buzz.css';
 import { addLike, addDislike, deleteBuzz }  from '../../actions/buzz';
 
-const SingleBuzz = ( {addLike, addDislike, deleteBuzz, auth, 
+const SingleBuzz = ( {addLike, addDislike, deleteBuzz, auth,
     buzz: {_id, text, category, image, email, name, avatar, user, likes, dislikes, date}}) =>{
     return(
         <div className='SingleBuzz'>
@@ -21,7 +21,8 @@ const SingleBuzz = ( {addLike, addDislike, deleteBuzz, auth,
                     type='button'><i className="fas fa-trash-alt"></i></button>
                     )}
                     <div className='CategoryDiv'>
-                        <i className="fas fa-star"></i> {category}
+                        <i className="fas fa-star"></i> 
+                        {category}
                     </div>
                 </div>
             </div>

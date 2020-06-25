@@ -81,6 +81,57 @@ router.get('/', auth, async (req, res) =>{
     }
 });
 
+//@route   Get api/complaint/open
+//@desc    Get open Complaints of a user
+//@access  Private          
+router.get('/open', auth, async (req, res) =>{
+    try {
+        const complaint = await Complaint.find({
+            'user' :req.user.id})
+            .where({ status: 'Open' })
+            .sort({ date: -1 });
+        res.json(complaint);
+
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server Error');
+    }
+});
+
+//@route   Get api/complaint/progress
+//@desc    Get progress Complaints of a user
+//@access  Private          
+router.get('/progress', auth, async (req, res) =>{
+    try {
+        const complaint = await Complaint.find({
+            'user' :req.user.id})
+            .where({ status: 'In-Progress' })
+            .sort({ date: -1 });
+        res.json(complaint);
+
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server Error');
+    }
+});
+
+//@route   Get api/complaint/resolved
+//@desc    Get resolved Complaints of a user
+//@access  Private          
+router.get('/resolved', auth, async (req, res) =>{
+    try {
+        const complaint = await Complaint.find({
+            'user' :req.user.id})
+            .where({ status: 'Resolved' })
+            .sort({ date: -1 });
+        res.json(complaint);
+
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server Error');
+    }
+});
+
 //@route   Get api/complaint/admin
 //@desc    Get all Complaint of an Admin
 //@access  Private          

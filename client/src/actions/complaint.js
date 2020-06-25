@@ -28,6 +28,60 @@ export const getComplaints = () => async dispatch => {
     }
 }
 
+// GET COMPLAINTS FOR USER "Open"
+export const getOpen = () => async dispatch => {
+    try {
+        const res = await axios.get('/api/complaint/open');
+
+        dispatch({
+            type: GET_COMPLAINTS,
+            payload: res.data
+        });
+    } catch (err) {
+        // console.log(err)
+        dispatch({
+            type: COMPLAINT_ERROR,
+            payload: {msg: err.response.statusText, status: err.response.status }
+        });
+    }
+}
+
+// GET COMPLAINTS FOR USER "Progress"
+export const getProgress = () => async dispatch => {
+    try {
+        const res = await axios.get('/api/complaint/progress');
+
+        dispatch({
+            type: GET_COMPLAINTS,
+            payload: res.data
+        });
+    } catch (err) {
+        // console.log(err)
+        dispatch({
+            type: COMPLAINT_ERROR,
+            payload: {msg: err.response.statusText, status: err.response.status }
+        });
+    }
+}
+
+// GET COMPLAINTS FOR USER "Resolved"
+export const getResolved = () => async dispatch => {
+    try {
+        const res = await axios.get('/api/complaint/resolved');
+
+        dispatch({
+            type: GET_COMPLAINTS,
+            payload: res.data
+        });
+    } catch (err) {
+        // console.log(err)
+        dispatch({
+            type: COMPLAINT_ERROR,
+            payload: {msg: err.response.statusText, status: err.response.status }
+        });
+    }
+}
+
 // GET COMPLAINTS FOR ADMIN
 export const getComplaintsAdmin = () => async dispatch => {
     try {
