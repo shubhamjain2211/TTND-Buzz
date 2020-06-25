@@ -27,7 +27,7 @@
     top:25vh;
     max-width: 30%;
     margin: auto;
-    padding: 0.5rem;
+    padding: 2rem;
     border-radius: 0.3rem;
     filter:drop-shadow(8px 8px 10px grey);
 }
@@ -38,7 +38,7 @@
     display: block;
     color: #838282;
     font-weight: 500;
-    padding: 1.2rem;
+    padding: 1rem;
   }
   
   .logintext .logintexttooltip {
@@ -57,6 +57,22 @@
     visibility: visible;
   } 
 
+.LoginButton{
+    padding: 1rem;
+    color: rgb(236, 83, 27);
+    border: 1px solid #cfc8c8;
+    border-radius: 0.2rem;
+    width: fit-content;
+    margin: 2rem;
+}
+.LoginButton:hover{
+    cursor: pointer;
+    filter: drop-shadow(2px 2px 2px #cfc8c8);
+    font-weight: 500;
+    background-color: rgb(236, 83, 27);
+    color: white;
+    text-decoration: none;
+}
 @media (max-width:600px){
   .login-div img{
     width: 50%;

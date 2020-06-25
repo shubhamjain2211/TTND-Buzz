@@ -18,8 +18,8 @@ if(isAuthenticated){
             <div className="logintext">Create Your Own Buzz
               <span className="logintexttooltip">The purpose of this app is to make the process of circulating events and concerns in a structured way.</span>
             </div>
-            <Link to="/loginform">Login</Link><br></br>
-            <Link to="/registerform">Register</Link>
+            <Link className='LoginButton' to="/loginform">Login</Link>
+            <Link className='LoginButton' to="/registerform">Register</Link>
         </div>
     </main>
   );  
