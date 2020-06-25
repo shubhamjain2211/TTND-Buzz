@@ -97,21 +97,6 @@ router.get('/admin', auth, async (req, res) =>{
     }
 });
 
-
-// //@route   Get api/complaint
-// //@desc    Get all Complaints
-// //@access  Private          
-// router.get('/', auth, async (req, res) =>{
-//     try {
-//         const complaint = await Complaint.find().sort({ date: -1 });
-//         res.json(complaint);
-
-//     } catch (err) {
-//         console.error(err.message);
-//         res.status(500).send('Server Error');
-//     }
-// });
-
 //@route   Get api/complaint:id
 //@desc    Get a complaint by Id
 //@access  Private          
@@ -124,16 +109,51 @@ router.get('/:id', auth, async (req, res) =>{
         }
 
         //Check User
-        if(complaint.user.toString() !== req.user.id){
+        // console.log(req.user.id);
+        // console.log(complaint.user);
+        // console.log(complaint.assignedToId);
+
+        if(complaint.user.toString() === req.user.id)
+            res.json(complaint);
+        else if(complaint.assignedToId.toString() === req.user.id)
+            res.json(complaint);
+        else 
             return res.status(401).json({ msg: 'User not authorised' });
         }
-        res.json(complaint);
 
-    } catch (err) {
+     catch (err) {
         console.error(err.message);
         if(err.kind==='ObjectId') {
             return res.status(404).json({ msg: 'Complaint not found' })
         }
+        res.status(500).send('Server Error');
+    }
+});
+
+router.put('/update/:id', auth, async (req,res) => {
+    try {
+        let complaint = await Complaint.findByIdAndUpdate( req.params.id );
+
+        console.log('original',complaint.status); 
+
+        if(complaint.status==='Open'){
+            console.log('open to progress');
+            complaint.status = 'In-Progress';}
+        else if(complaint.status==='In-Progress'){
+            console.log('progress to resolved');
+            complaint.status = 'Resolved';}
+        else if(complaint.status==='Resolved'){
+            console.log('resolved to open');
+            complaint.status = 'Open';}
+        
+        await complaint.save();
+
+        console.log('edited',complaint.status); 
+        
+        res.json(complaint);
+
+    } catch (err) {
+        console.error(err.message);
         res.status(500).send('Server Error');
     }
 });

@@ -5,7 +5,9 @@ import{
     GET_COMPLAINTS_ADMIN,
     COMPLAINT_ERROR,
     ADD_COMPLAINT,
-    GET_COMPLAINT_BY_ID
+    GET_COMPLAINT_BY_ID,
+    DELETE_COMPLAINT,
+    UPDATE_COMPLAINT_STATUS
 } from './types';
 
 // GET COMPLAINTS FOR USER
@@ -56,6 +58,48 @@ export const getComplaintById = id => async dispatch => {
         
     } catch (err) {
         // console.log(err)
+        dispatch({
+            type: COMPLAINT_ERROR,
+            payload: {msg: err.response.statusText, status: err.response.status }
+        });
+    }
+}
+
+// UPDATE COMPLAINT STATUS
+export const updateStatus = id => async dispatch => {
+    try {
+        const res = await axios.put(`/api/complaint/update/${id}`);
+
+        dispatch({
+            type: UPDATE_COMPLAINT_STATUS,
+            payload: res.data
+        });
+
+        dispatch(setAlert('Status Updated', 'success'));
+
+    } catch (err) {
+        dispatch({
+            type: COMPLAINT_ERROR,
+            payload: {msg: err.response.statusText, status: err.response.status }
+        });
+    }
+}
+
+// DELETE COMPLAINT
+export const deleteComplaint = id => async dispatch => {
+    try {
+        if(window.confirm('Are you sure you want to delete?')){
+        const res = await axios.delete(`/api/complaint/${id}`);
+        dispatch({
+            type: DELETE_COMPLAINT,
+            payload: id
+        });
+
+        dispatch(setAlert('Complaint Removed', 'success'));
+    }
+    else console.log('Cancelled');
+    
+    } catch (err) {
         dispatch({
             type: COMPLAINT_ERROR,
             payload: {msg: err.response.statusText, status: err.response.status }

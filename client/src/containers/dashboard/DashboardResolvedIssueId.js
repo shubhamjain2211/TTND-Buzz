@@ -6,11 +6,11 @@ import Banner from '../../components/banner/Banner';
 import { connect } from 'react-redux';
 import {Redirect,Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { getComplaintById } from '../../actions/complaint';
+import { getComplaintById, updateStatus } from '../../actions/complaint';
 import Spinner from '../../components/layouts/Spinner';
 import Moment from 'react-moment';
 
-const DashboardComplaintsIssueId = ({ auth, getComplaintById, complaint: { complaint, loading}, match })   => {
+const DashboardResolvedIssueId = ({ auth, getComplaintById, updateStatus, complaint: { complaint, loading}, match })   => {
 
   useEffect(() => { 
     getComplaintById(match.params.id);
@@ -30,7 +30,7 @@ const DashboardComplaintsIssueId = ({ auth, getComplaintById, complaint: { compl
       <Fragment>
         <div className="Dashboard">            
             <div>
-              <Link to="/complaints"><i className="fas fa-chevron-left"></i> Back</Link>
+              <Link to="/resolved"><i className="fas fa-chevron-left"></i> Back</Link>
             </div>
 
             <div className="ComplaintHolderId">
@@ -46,9 +46,19 @@ const DashboardComplaintsIssueId = ({ auth, getComplaintById, complaint: { compl
 
               <div>
               <span><label>Department:</label>{complaint.department}</span>
-              <span><label>Status:</label>{complaint.status}</span> {/* Open Again */}
+              <span><label>Status:</label>{complaint.status}
+              {complaint.status==="Resolved"? <button onClick={e =>updateStatus(complaint._id)} 
+              className="ComplaintIdButton"><i className="fas fa-redo-alt"></i>
+              Open Again</button> : null}
+              {complaint.status==="Open"? <button onClick={e =>updateStatus(complaint._id)}
+              className="ComplaintIdButton"><i className="fas fa-exclamation"></i> 
+              In-Progress</button> : null}
+              {complaint.status==="In-Progress"? <button onClick={e =>updateStatus(complaint._id)}
+              className="ComplaintIdButton"><i className="far fa-check-circle"></i> 
+              Resolved</button> : null}
+              </span>
               </div>
-
+        
               <div>
               <span><label>AssignedTo:</label>{complaint.assignedTo}</span>
               <span><label>LockedBy:</label>{complaint.lockedBy}</span>
@@ -68,10 +78,11 @@ const DashboardComplaintsIssueId = ({ auth, getComplaintById, complaint: { compl
       </Fragment>
 )}
 
-DashboardComplaintsIssueId.propTypes = {
+DashboardResolvedIssueId.propTypes = {
   auth: PropTypes.object.isRequired,
   getComplaintById: PropTypes.func.isRequired,
-  complaint: PropTypes.object.isRequired
+  complaint: PropTypes.object.isRequired,
+  updateStatus: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -79,4 +90,4 @@ const mapStateToProps = state => ({
   complaint: state.complaint
 });
 
-export default connect(mapStateToProps, { getComplaintById })(DashboardComplaintsIssueId);
+export default connect(mapStateToProps, { getComplaintById, updateStatus })(DashboardResolvedIssueId);

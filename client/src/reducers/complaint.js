@@ -3,7 +3,9 @@ import{
     GET_COMPLAINTS_ADMIN,
     COMPLAINT_ERROR,
     ADD_COMPLAINT,
-    GET_COMPLAINT_BY_ID
+    GET_COMPLAINT_BY_ID,
+    DELETE_COMPLAINT,
+    UPDATE_COMPLAINT_STATUS
 } from '../actions/types';
 
 const initialState = {
@@ -35,6 +37,12 @@ export default function( state = initialState, action ) {
                 complaint: payload,
                 loading: false
             };
+        case UPDATE_COMPLAINT_STATUS:
+            return {
+                ...state,
+                complaint: payload,
+                loading: false
+            };
         case ADD_COMPLAINT:{
             return {
                 ...state,
@@ -42,6 +50,12 @@ export default function( state = initialState, action ) {
                 loading: false
             }
         };
+        case DELETE_COMPLAINT:
+            return {
+                ...state,
+                complaint: state.complaints.filter(complaint => complaint._id !== payload),
+                loading: false
+            };
         case COMPLAINT_ERROR:
             return {
                 ...state,

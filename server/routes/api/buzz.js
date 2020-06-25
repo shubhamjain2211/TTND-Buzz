@@ -113,6 +113,7 @@ router.put('/like/:id', auth, async (req,res) => {
         buzz.likes.unshift({ user: req.user.id });
 
         await buzz.save();
+        console.log(buzz);
 
         res.json(buzz.likes);
     } catch (err) {

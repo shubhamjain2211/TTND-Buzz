@@ -28,7 +28,7 @@ const SingleComplaint = ( {auth, complaint: { _id, user, text, name, email,
                         {assignedTo}
                     </td>
                     <td>
-                        <span className={statusClass}>{status}</span>
+                        <span className={statusClass}>{status}</span> 
                     </td>
                 </tr>
                 </tbody>
@@ -41,7 +41,7 @@ const SingleComplaint = ( {auth, complaint: { _id, user, text, name, email,
 
 SingleComplaint.propTypes = {
     complaint: PropTypes.object.isRequired,
-    auth: PropTypes.object.isRequired
+    auth: PropTypes.object.isRequired,
 }
 
 const mapStateToProps = state => ({

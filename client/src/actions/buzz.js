@@ -62,7 +62,7 @@ export const addDislike = id => async dispatch => {
 // DELETE BUZZ
 export const deleteBuzz = id => async dispatch => {
     try {
-        alert('Are you sure you want to delete?');
+        if(window.confirm('Are you sure you want to delete?')){
         const res = await axios.delete(`/api/buzz/${id}`);
         dispatch({
             type: DELETE_BUZZ,
@@ -70,6 +70,8 @@ export const deleteBuzz = id => async dispatch => {
         });
 
         dispatch(setAlert('Buzz Removed', 'success'));
+    }
+    else console.log('Cancelled');
         
     } catch (err) {
         dispatch({

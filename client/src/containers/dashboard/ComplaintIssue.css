@@ -2,7 +2,7 @@
     width: 80%;
     border: 1px solid #dfdfdf;
     background-color: #ffffff;
-    color: #b3aeae;
+    color: #686363;
     border-radius: 0.2rem;
     padding: 1rem;
     margin: auto;
@@ -21,6 +21,7 @@
 }
 
 .ComplaintHolderId div span label{
+    color: #b3aeae;
     font-size: 1.2rem;
     font-weight: 800;
     padding: 0.5rem;
@@ -33,6 +34,21 @@
 .imageComplaint{
     margin: 1rem;
     width: 40vh;
+}
+
+.ComplaintIdButton{
+    color: rgb(236, 83, 27);
+    background-color: #dfdfdf;
+    border: 1px solid #cfc8c8;
+    border-radius: 0.2rem;
+    width: fit-content;
+    margin: 0 1rem;
+}
+
+.ComplaintIdButton:hover{
+    cursor: pointer;
+    filter: drop-shadow(2px 2px 2px #cfc8c8);
+    font-weight: 500;
 }
 
 @media(max-width:700px){
