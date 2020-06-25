@@ -31,6 +31,7 @@ const App = () => {
   <Provider store={store}>
     <Router>
       <Fragment>
+        <Switch>
         <Route exact path='/' component={Login} />
         <Route exact path='/dashboard' component={Dashboard} />
         <Route exact path='/profile' component={DashboardProfile} />
@@ -38,11 +39,11 @@ const App = () => {
         <Route exact path='/complaints/:id' component={DashboardComplaintsIssueId} />
         <Route exact path='/resolved/:id' component={DashboardResolvedIssueId} />
         <Route exact path='/resolved' component={DashboardResolved} />
-        <Alert />
-        <Switch>
-          <Route exact path='/loginform' component={LoginForm} />
-          <Route exact path='/registerform' component={RegisterForm} />
+        <Route exact path='/loginform' component={LoginForm} />
+        <Route exact path='/registerform' component={RegisterForm} />
+        <Route component={Dashboard} />
         </Switch>
+        <Alert />
       </Fragment>
     </Router>
   </Provider>

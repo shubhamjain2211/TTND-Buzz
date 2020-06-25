@@ -40,8 +40,8 @@ const ComplaintSchema = new Schema({
     status: {
         type : String,
     },
-    image: {
-        type : String,
+    image:{
+        type : String
     },
     date : {
         type: Date,

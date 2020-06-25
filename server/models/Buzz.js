@@ -17,8 +17,8 @@ const BuzzSchema = new Schema({
     category: {
         type : String,
     },
-    image: {
-        type : String
+    image:{
+            type : String
     },
     name: {
         type : String,
